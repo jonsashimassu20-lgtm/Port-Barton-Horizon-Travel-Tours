@@ -1,0 +1,1316 @@
+/* 1. Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-behavior: 100px;
+}
+#hero-section,
+#top-destinations,
+#services,
+#why-choose-us,
+#most-visit {
+    scroll-margin-top: 80px;
+}
+
+/* 2. Header: Ginawa nating Puti ang background */
+header {
+    background-color: #ffffff;
+    /* Puti ang background */
+    width: 100%;
+    border-bottom: 1px solid #eeeeee;
+    /* Manipis na linya para hiwalay sa body */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0%;
+    z-index: 1;
+}
+
+/* 3. Container: Naka-box sa gitna */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Sinisiguro nito na pantay-pantay ang taas ng logo, text, at cart */
+    padding: 10px 20px;
+    height: 90px;
+    /* Tinaasan natin para magkasya ang mas malaking logo */
+}
+
+/* 4. Branding: Pinalaki ang Logo at Text */
+.branding {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.branding img {
+    width: 80px;
+    /* Pinalaki mula sa dating 50px/60px */
+    height: auto;
+}
+
+.branding p {
+    color: #4B5B30;
+    /* Itim na text */
+    font-size: 16px;
+    /* Mas malaki nang konti */
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    /* Para mas modern tignan */
+}
+
+/* 5. Navigation: Inusog nang konti pakanan */
+.nav-bar {
+    margin-left: auto;
+    margin-right: 50px;
+    /* Space bago ang cart icon */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333333;
+    /* Dark gray/Black para readable */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #4B5B30;
+    /* Blue highlight pag hinover */
+}
+
+/* 6. Icons Section: Dito natin siniguro na hindi bababa ang cart */
+.header-actions {
+    display: flex;
+    align-items: center;
+    /* Importante ito para pantay ang cart sa nav links */
+}
+
+.cart-icon {
+    color: #4B5B30;
+    /* Itim na cart icon */
+    font-size: 24px;
+    /* Ginawang mas malaki para madaling makita */
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.cart-icon:hover {
+    color: #0077B6;
+    transform: scale(1.1);
+}
+
+/* hero section ---------------------------------------------------------------------------- */
+
+#hero-section {
+    width: 100%;
+    height: 80vh;
+    /* Gagamit ng 80% ng taas ng screen */
+    position: relative;
+}
+
+.hero-image-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ito ang "magic" para sumagad at hindi ma-stretch ang image */
+    display: block;
+    filter: brightness(80%);
+}
+
+/* Pag-center ng text sa gitna ng image */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Perfect centering formula */
+    text-align: center;
+    color: white;
+    width: 90%;
+    /* Para hindi dikit sa gilid pag sa mobile */
+}
+
+.hero-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+    /* Para lutang ang text kahit maliwanag ang picture */
+}
+
+.hero-content p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-links {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 80px;
+}
+
+.hero-links a {
+    padding: 20px 40px;
+    border-radius: 8px;
+    background-color: #606C38;
+    border: none;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.hero-links a:hover {
+    transform: scale(1.02);
+}
+
+/* ------------------------------------------------------description*/
+.hero-description {
+    padding: 80px 20px;
+    /* Mas malawak na space sa taas at baba */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center lahat ng content */
+    background-color: #fff;
+    /* Malinis na puting background */
+}
+
+.green-text {
+    color: #4B5B30;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+/* Styling sa Title */
+.hero-description h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #3b3a3a;
+    /* Dark color para sa professional feel */
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Ang Divider (Yung maliit na guhit sa ilalim ng title) */
+.title-divider {
+    width: 60px;
+    height: 4px;
+    background-color: #4B5B30;
+    /* Blue accent color mo */
+    margin-bottom: 40px;
+    border-radius: 2px;
+}
+
+/* Ang Text Container */
+.description-box {
+    max-width: 800px;
+    /* Nilimitahan ang lapad para masarap basahin */
+    margin: 0 auto;
+}
+
+.destination-notes p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.15rem;
+    /* Medyo nilakasan ang font size */
+    line-height: 1.8;
+    /* Maluwag na spacing sa pagitan ng lines */
+    color: #444;
+    /* Soft black/gray */
+    margin-bottom: 25px;
+    text-align: center;
+    /* Naka-center ang text gaya nung sa image */
+}
+
+/* ------------------------------------------------------travel info*/
+#travel {
+    width: 100%;
+    height: 500px;
+    /* Gagamit ng 80% ng taas ng screen */
+    position: relative;
+}
+
+.travel-image-wrapper img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: bottom;
+    filter: brightness(80%);
+}
+
+.travel-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Perfect centering formula */
+    text-align: center;
+    color: white;
+    width: 90%;
+    /* Para hindi dikit sa gilid pag sa mobile */
+}
+
+.travel-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+    /* Para lutang ang text kahit maliwanag ang picture */
+}
+
+.travel-content p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    padding-bottom: 20px;
+    margin-bottom: 70px;
+}
+
+.travel-info a {
+    display: inline-block;
+    padding: 20px 40px;
+    border-radius: 8px;
+    background-color: #606C38;
+    border: none;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.travel-info a:hover {
+    transform: scale(1.03);
+}
+
+/* ------------------------------------------------------popuplar destinations*/
+#top-destinations {
+    width: 100%;
+    padding: 80px 0;
+    /* Space sa taas at baba */
+    background-color: #f9f9f9;
+}
+
+.destinations-container {
+    max-width: 1200px;
+    /* Kapareho ng header natin para pantay sila */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 1. Header Styling */
+.destinations-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Main Title (Yung "Port Barton's Top Destinations") */
+.destinations-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2D2D2D;
+    margin-bottom: 10px;
+    text-transform: none;
+    letter-spacing: -1px;
+}
+
+/* Subtitle (Yung "Discover The Beauty...") */
+.destinations-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #777777;
+    margin-bottom: 20px;
+    text-transform: none;
+}
+
+/* Paragraph Text */
+.destinations-header p {
+    font-family: 'Open Sans', sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: #555555;
+    font-size: 1.1rem;
+}
+
+/* Decorative Divider (Huwag mong kalimutan ito, nasa image ito!) */
+.destinations-header::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #4B5B30;
+    margin: 25px auto;
+    border-radius: 2px;
+}
+
+/* 2. Grid Logic (Eto ang kailangan mo) */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 na pantay na column */
+    gap: 20px;
+    /* Patlang sa pagitan ng mga cards */
+}
+
+/* 3. Card Styling */
+.card {
+    position: relative;
+    /* Para sa text overlay mamaya */
+    border-radius: 6px;
+    overflow: hidden;
+    /* Para hindi lumabas ang image sa rounded corners */
+    height: 250px;
+    /* Fixed height para pantay-pantay ang cards */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Para hindi pango ang image */
+    transition: transform 0.5s;
+}
+
+/* Hover effect: Zoom image */
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* 4. Text Overlay sa loob ng Card */
+.title-des {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    /* Para mabasa ang puting text */
+    text-align: left;
+}
+
+/* ------------------------------------------------------why choose us*/
+/* 1. Ang Buong Section Container */
+#why-choose-us {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+    margin-top: -70px;
+}
+
+/* Fix sa Divider para siguradong laging nasa gitna sa ilalim ng title */
+.title-divider-whyus {
+    width: 60px;
+    height: 4px;
+    background-color: #4B5B30;
+    margin: -20px auto 50px auto;
+    /* Ginawang auto ang kaliwa't kanan para laging centered */
+    border-radius: 2px;
+}
+
+/* 2. Ang Title sa Itaas */
+.choose-us {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 50px;
+}
+
+/* 3. Ang Main Content Wrapper */
+.whyus-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* 'flex-start' para kung mahaba ang text, sa itaas pa rin magsisimula ang alignment */
+    gap: 60px;
+}
+
+/* Left Side: Ang Image Area */
+.why-us {
+    width: 450px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* Right Side: Ang lalagyan ng Cards */
+.whyus-right {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 4. Ang Grid/Flex ng mga Cards */
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 30px;
+    /* Nilakasan ang gap para may patlang ang bawat feature */
+}
+
+/* 5. Ang Mismong Feature (Tinanggal na ang Box) */
+.feature {
+    flex: 1;
+    min-width: 220px;
+    background-color: transparent;
+    /* Ginawang transparent */
+    padding: 10px;
+    /* Binawasan ang padding dahil wala nang pader na iiwasan */
+    /* Tinanggal ang box-shadow at border-radius dito */
+}
+
+/* Inside the Feature: Ang Icon/Img */
+.feature img {
+    display: block;
+    margin: 0 auto 15px;
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+/* Inside the Feature: Ang Sub-title */
+.feature h3 {
+    text-align: center;
+    color: #4B5B30;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+/* Inside the Feature: Ang Paragraph Text */
+.feature p {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    line-height: 1.6;
+    color: #666666;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ------------------------------------------------------Divider*/
+#color-divider {
+    padding: 80px 20px;
+    background-color: #4B5B30;
+
+    /* PERFECT CENTER FORMULA (Flexbox) */
+    display: flex;
+    flex-direction: column;
+    /* Pinagpapatong ang text at ang line */
+    align-items: center;
+    /* Gitna horizontally */
+    justify-content: center;
+    /* Gitna vertically */
+    text-align: center;
+    position: relative;
+    /* Panatilihin kung lalagyan mo ng patusok sa ilalim mamaya */
+}
+
+.background-divider {
+    /* TINANGGAL ANG POSITION: ABSOLUTE AT TRANSLATE */
+    width: 100%;
+    margin-bottom: 20px;
+    /* Ito ang nagbibigay ng tamang patlang bago ang linya */
+}
+
+.background-divider h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    /* Inalis ang margin para walang istorbo sa spacing */
+}
+
+.line-divider {
+    width: 60px;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    margin: 0;
+    /* Hindi na kailangan ng negative margin at auto dahil naka-flexbox na ang parent */
+}
+
+/* ------------------------------------------------------MOst popular destinations*/
+#most-visit {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+    margin-top: -70px;
+}
+
+.most-visit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.most-visit-container h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0px;
+}
+
+.most-visit-container h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #777777;
+    margin-bottom: 20px;
+    text-transform: none;
+}
+
+.most-visit-container p {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    line-height: 1.6;
+    color: #666666;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.most-visit-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    /* Nilakasan ang gap para may patlang ang bawat feature */
+}
+
+/* Buong Section Base */
+#most-visit {
+    width: 100%;
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+/* Main Container: Para sa pag-center ng buong nilalaman */
+.most-visit-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Elements (Gaya nung ginawa natin sa Top Destinations) */
+.most-visit-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.most-visit-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.most-visit-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.most-visit-header p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 800px;
+    margin: 5px auto;
+}
+
+/* Cards Wrapper Grid - Dito aayusin ang pagpila ng 4 o higit pang cards */
+/* Section Wrapper */
+#most-visit {
+    width: 100%;
+    padding: 80px 0;
+    background-color: #f9f9f9;
+    /* Banayad na kulay sa background para lumutang ang puting cards */
+}
+
+/* Main Centered Container */
+.most-visit-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Text Styles */
+.most-visit-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.most-visit-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.most-visit-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.most-visit-header p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    max-width: 800px;
+    margin: 8px auto;
+}
+
+/* Flex Grid para sa pagpila ng mga Cards */
+.most-visit-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    /* Patlang sa pagitan ng bawat card */
+    margin-top: 15px;
+}
+
+/* THE CARD: Walang bilog ang kanto, may border, at patayo ang bagsak ng laman */
+.most-visit-card {
+    display: flex;
+    flex-direction: column;
+    /* Pinagpapatong ang image box at text box */
+    width: 300px;
+    /* Sakto ang lapad para sa 3-4 cards sa isang row */
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    /* Manipis na border sa gilid gaya ng sa image */
+    border-radius: 0 !important;
+    /* STRICT: Siguradong matulis ang lahat ng kanto */
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    /* Napakalamlam na anino */
+}
+
+/* Image Section (Kalahating Taas) */
+.card-image-box {
+    width: 100%;
+    height: 200px;
+    /* Fixed height para pantay-pantay ang hati ng mga pictures */
+    overflow: hidden;
+}
+
+.card-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Swabe ang crop ng larawan nang hindi nayuyupi */
+}
+
+/* Text & Details Section (Kalahating Baba - Solid White) */
+.card-details-box {
+    padding: 25px 20px 0 20px;
+    /* Spacing sa loob */
+    background-color: #ffffff;
+    /* Siguradong white background */
+    text-align: center;
+    /* Naka-center ang H4 at Price gaya ng sa image mo */
+}
+
+/* Tour Title */
+.card-details-box h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0 0 8px 0;
+}
+
+.color-price {
+    color: #4B5B30;
+}
+
+/* Price Details */
+.card-price {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #147083;
+    /* Kulay teal/blue-green para sa presyo */
+    font-weight: 600;
+    margin: 0 0 25px 0;
+    /* Space bago dumating ang footer line */
+}
+
+/* Card Footer (Yung may pahalang na guhit sa ilalim) */
+.card-footer {
+    border-top: 1px solid #edf2f7;
+    /* Ang linya sa ibabaw ng Book Now */
+    padding: 15px 0;
+    text-align: left;
+    /* STRICT: Naka-sandal sa kaliwang bahagi */
+}
+
+/* Book Now Link Feature */
+.book-now-link {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #4a5568;
+    text-decoration: none;
+    /* Walang salungguhit sa simula */
+    font-weight: 600;
+    text-transform: uppercase;
+    /* Ginawang all-caps para malinis tignan */
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+}
+
+/* Hover Effect para sa Book Now */
+.book-now-link:hover {
+    color: #147083;
+    /* Magkukulay teal kapag itinapat ang mouse */
+    text-decoration: underline;
+    /* Lalabas ang salungguhit sa hover */
+}
+
+
+/* ------------------------------------------------------services*/
+#services {
+    width: 100%;
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    ;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    width: 250px;
+    min-height: 250px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    display: block;
+    gap: 20px;
+}
+
+.service-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.service-title img {
+    margin: 15px 15px;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.our-services-text {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.service-title p {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    color: #777;
+    text-align: center;
+}
+
+.stars {
+    color: #EAB308;
+    letter-spacing: 12px;
+    text-align: center;
+}
+
+.service-description {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    line-height: 1.6;
+    color: #666666;
+    font-size: 0.95rem;
+    margin: 0;
+    padding: 10px;
+}
+
+.btn-message {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 16px;
+}
+
+.btn-message a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 60px;
+    background-color: #4B5B30;
+    color: white;
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+    transition: 0.3s ease;
+}
+
+.btn-message a:hover {
+    transform: scale(1.02);
+}
+
+/* ------------------------------------------------------testimonials*/
+#testimonials {
+    width: 100%;
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.testimonials {
+    width: 250px;
+    min-height: 320px;
+    display: block;
+    gap: 20px;
+    text-align: center;
+}
+
+.what-our {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.testimonials img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.testimonials h3 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.ago {
+    color: #545e64;
+    margin-bottom: 10px;
+}
+
+.star {
+    color: rgb(233, 233, 81);
+    margin-bottom: 8px;
+}
+
+/* ------------------------------------------------------location*/
+
+#location {
+    width: 100%;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.location-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.location-info {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+.location-info p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.say-hi {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.map {
+    border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    margin-bottom: 60px;
+}
+
+.book-now {
+    margin-right: 20px;
+}
+
+.book-now h3 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.book-now p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.map-btn-booknow {
+    margin: 20px auto 20px auto;
+    padding: 10px 10px;
+    background-color: #4B5B30;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    /* Naka-ready na ang transition mo rito kaya swabe ang galaw nito mamaya */
+    width: 30%;
+    text-align: center;
+}
+
+.map-btn-booknow a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    width: 100%;
+    /* PRO-TIP: Ginawa nating 100% ang lapad para kahit sa gilid ng box i-click ng user, gagana pa rin ang link */
+}
+
+/* FIX: Inilipat ang :hover sa mismong kahon imbes na sa text lang */
+.map-btn-booknow:hover {
+    transform: scale(1.03);
+    /* Buong button na ang aangat ngayon! */
+}
+
+/* ------------------------------------------------------footer*/
+/* --- 1. BASE FOOTER BLOCK --- */
+#footer {
+    width: 100%; /* Sinasakop ang buong lapad ng screen mula kaliwa pakanan */
+    padding: 80px 0 0 0; /* Puwang sa itaas ng footer area niyo */
+    background-color: #4B5B30; /* Ang iyong green background color */
+    font-family: 'Open Sans', sans-serif; /* Font ng mga talata mo */
+    
+    /* CRUCIAL FIX 1: Pinapatay ang Margin Collapse para MAWALA ang phantom white line sa itaas! */
+    overflow: hidden; 
+}
+.footer-container {
+    display: flex; /* Ginagawang flex layout para magtabi-tabi ang mga kolum sa loob nito */
+    max-width: 1200px; /* Nililimitahan ang pinakamalaking lapad ng footer para hindi sumabog sa malalaking screen */
+    margin: 0 auto; /* Awtomatikong pinapantay sa gitna ng buong screen ang container box niyan */
+    padding: 0 20px; /* Nagbibigay ng 20px na allowance sa kaliwa't kanan para hindi idikit sa dulo ng monitor */
+}
+
+/* --- MGA ESTILO PARA SA UNANG KOLUM (BRAND COLUMN LIKES IMAGE) --- */
+.footer-column1 {
+    display: flex; /* Gagamit ng flexbox framework para maayos ang pagkakahanay ng mga laman */
+    flex-direction: column; /* Pinagpapatong-patong pababa ang logo block, mga teksto, at social links block */
+    align-items: flex-start; /* EXACT MATCH FIX: Isinasandal ang lahat ng elemento sa kaliwang bahagi, bawal ang center */
+    text-align: left; /* Tinitiyak na ang panimula ng bawat linya ng mga pangungusap ay nasa kaliwa */
+    flex: 1; /* Binibigyan ng pantay na karapatan sa espasyo ang buong kolum na ito sa screen niyo */
+}
+
+.logo {
+    display: flex; /* Pinagtatabi ang logo image at ang tekstong H2 */
+    
+    /* CRUCIAL FIX 2: Ginawang 'flex-start' imbes na 'center' para pumantay sa itaas kapareho ng H3 */
+    align-items: flex-start; 
+    
+    justify-content: flex-start; /* Sinasandal sa kaliwa ang buong grupo ng logo */
+    margin-bottom: 20px; /* Puwang sa ilalim bago mag-paragraph text */
+    gap: 15px; /* Distansya ng larawan sa tabi ng teksto niyo */
+}
+
+.logo img {
+    width: 80px; /* Saktong liit ng logo image niyo */
+    height: auto; /* Propresyon ng taas ng larawan niyan */
+    
+    /* CRUCIAL FIX 3: Bibigyan natin ng konting tulak pababa (2px) ang larawan para sumakto sa baseline ng H2 text niyo */
+    margin-top: 2px; 
+}
+
+.logo h2 {
+    font-family: 'Montserrat', sans-serif; /* Font family para sa pamagat niyo */
+    font-size: 1.3rem; /* Sukat ng laki ng letra ng pamagat niyo */
+    font-weight: 200; /* Makapal na texture styles layers */
+    color: #ffffff; /* Purong puting kulay ng titik */
+    
+    /* CRUCIAL FIX 4: Tinitiyak na walang margin sa itaas para pantay sa simula ng H3 */
+    margin: 0; 
+}
+
+.footer-column1 p {
+    color: #a0aec0; /* Gray-blue na kulay para malinis tingnan at hindi masakit sa mata basahin ang detalye */
+    font-size: 0.95rem; /* Tamang laki ng letra para sa mga sub-text at deskripsyon ng biyahe */
+    line-height: 1.6; /* Nagbibigay ng magandang pagitan sa mga linya ng pangungusap para may hinga ang talata */
+    margin: 0 0 12px 0; /* May 12px na puwang sa ilalim ng bawat talata para hindi sila siksikan o magkadikit */
+    max-width: 350px; /* Nililimitahan ang lapad ng teksto para maganda ang pagkaputol ng mga salita pababa */
+}
+
+/* --- MGA ESTILO PARA SA MGA FONT-AWESOME ICONS (SOCIAL LINKS BLOCK) --- */
+.social-links {
+    display: flex; /* Pinagtatabi-tabi nang pahalang sa isang diretsong linya ang mga social media icons */
+    gap: 20px; /* Nagbibigay ng 20px na distansya o patlang sa pagitan ng bawat solong icon niyan */
+    margin-top: 15px; /* Nagbibigay ng kaunting espasyo sa itaas nito mula sa huling talata para may pagitan */
+}
+
+.social-links a {
+    color: #a0aec0; /* Gray ang panimulang kulay ng mga icons para magtugma sa kulay ng mga teksto niyo sa itaas */
+    font-size: 1.3rem; /* Pinalaki ang sukat ng mga icons mula sa FontAwesome para madaling makita ng turista */
+    text-decoration: none; /* Tinatago ang default na salungguhit ng mga links ng browser niyo */
+    transition: all 0.2s ease; /* Kontrolado ang bilis ng pagbabago ng kulay o posisyon kapag itinapat ang mouse niyo */
+}
+
+.social-links a:hover {
+    color: #ffffff; 
+    transform: translateY(-3px); 
+}
+.footer-column2 {
+    display: flex; /* Gagamit ng flexbox para maayos nang maayos ang posisyon sa loob ng kolum */
+    flex-direction: column; /* Pinagpapatong patayo ang pamagat at ang listahan ng mga links */
+    align-items: flex-start; /* EXACT MATCH FIX: Isinasandal sa kaliwang bahagi ang lahat ng laman, bawal ang center */
+    flex: 1; /* Binibigyan ng pantay na lapad ang kolum na ito para kasya sa tabi ng ibang kolum */
+}
+
+.quick-links h3 {
+    font-family: 'Montserrat', sans-serif; /* Makapal at eleganteng font style para sa pamagat ng kolum */
+    font-size: 1.1rem; /* Saktong laki ng letra para sa pamagat ng listahan */
+    text-transform: uppercase; /* EXACT MATCH: Ginagawang kapital o malalaking titik ang lahat ng letra ng pamagat */
+    color: #ffffff; /* Purong puti ang kulay para litaw sa madilim nating background ng footer */
+    letter-spacing: 1px; /* Nagbibigay ng banayad na patlang o espasyo sa pagitan ng bawat titik */
+    margin: 0 0 25px 0; /* Walang margin sa taas at gilid, pero may 25px na puwang sa ilalim bago mag-listahan */
+}
+
+.quick-links ul {
+    list-style: none; /* Tinatago ang default na mga bilog o "dots" ng listahan ng browser niyo */
+    padding: 0; /* Tinatagal ang automatic na urong o tabas ng browser sa kaliwa ng listahan */
+    margin: 0; /* Tinatanggal ang default na espasyo ng browser sa labas ng listahan */
+}
+
+.quick-links li {
+    margin-bottom: 12px; /* Nagbibigay ng 12px na patlang sa ilalim ng bawat item para may hinga sila at hindi siksikan */
+}
+
+.quick-links a {
+    color: #a0aec0; /* Gray-blue na kulay para katugma ng mga teksto at deskripsyon sa unang kolum */
+    font-size: 0.95rem; /* Tamang laki ng letra para sa mga links ng navigation niyo */
+    text-decoration: none; /* Tinatanggal ang default na salungguhit ng mga link ng browser */
+    display: inline-block; /* Ginagawang inline-block para gumana nang tama ang transition animation */
+    transition: all 0.2s ease; /* Kontrolado ang bilis ng paggalaw o pagbago ng kulay kapag tinalaban ng mouse */
+}
+
+.quick-links a:hover {
+    color: #ffffff; /* EXACT MATCH: Nagiging purong puti ang link kapag itinapat ang mouse pointer niyo */
+    transform: translateX(5px); /* Bahagyang umuusod nang 5px pakanan ang text para sa interactive feedback effect */
+}
+/* --- MGA ESTILO PARA SA PANGATLONG KOLUM (NEWSLETTER) --- */
+.footer-column3 {
+    display: flex; /* Gagamit ng flexbox para maayos nang malinis ang patayong pagkakahahanay sa loob */
+    flex-direction: column; /* Pinagpapatong patayo ang pamagat, talata, at ang buong form area */
+    align-items: flex-start; /* EXACT MATCH FIX: Isinasandal sa kaliwang bahagi ang lahat ng laman, bawal mag-center */
+    flex: 1; /* Binibigyan ng pantay na lapad ang kolum na ito para bumagay sa tabi ng unang dalawang kolum */
+}
+
+.news-letter h3 {
+    font-family: 'Montserrat', sans-serif; /* Gagamit ng makapal na font para sa pamagat */
+    font-size: 1.1rem; /* Saktong sukat ng laki ng letra para sa pangunahing pamagat ng kolum */
+    text-transform: uppercase; /* EXACT MATCH: Tinitiyak na laging kapital o malalaking titik ang mga letra nito */
+    color: #ffffff; /* Purong puti ang kulay para lumutang nang maayos sa madilim na background ng footer */
+    letter-spacing: 1px; /* Nagbibigay ng kaunting patlang sa pagitan ng mga titik para sa premium look */
+    margin: 0 0 25px 0; /* Walang puwang sa taas at gilid, ngunit may 25px na space sa ilalim bago magtalata */
+}
+
+.news-letter p {
+    color: #a0aec0; /* Gray-blue na kulay para katugma at kasweto ng mga teksto sa unang dalawang kolum niyo */
+    font-size: 0.95rem; /* Tamang laki ng letra para sa maikling talata o sub-text ng paanyaya */
+    line-height: 1.6; /* Nagbibigay ng magandang pagitan sa mga linya para maging "breathable" at madaling basahin */
+    margin: 0 0 20px 0; /* Walang puwang sa taas at gilid, pero may 20px na allowance sa ilalim bago dumating ang form */
+    max-width: 320px; /* Nililimitahan ang lapad ng pangungusap para maganda at malinis ang bagsak ng mga salita pababa */
+}
+
+.news-letterForm {
+    display: flex; /* Gagamit ng flexbox para mapagpatong-patong ang mga inputs at ang submit button natin */
+    flex-direction: column; /* Isinasaayos ang mga input boxes at button na magka-pila pababa sa isang linya */
+    gap: 12px; /* Nagbibigay ng saktong 12px na distansya o patlang sa pagitan ng bawat input field at button */
+    width: 100%; /* Sinasakop nito ang buong lapad ng kaniyang kolum para maging malawak tingnan */
+    max-width: 300px; /* Nililimitahan ang pinakamalaking lapad ng form para hindi maging sobrang haba ang mga kahon */
+}
+
+.news-letterForm input {
+    width: 100%; /* Sinasakop ang buong lapad ng form container para pantay-pantay ang mga input boxes niyo */
+    padding: 14px 16px; /* Maluwag na agwat sa loob ng kahon para kumportableng mag-type ang bumibisita sa site niyo */
+    background-color: white; /* EXACT MATCH: Mas mapusyaw na kulay itim/dark gray na kahon para sa lalagyan ng sulat */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Manipis at halos hindi mapansing border line sa paligid ng input */
+    color: #4B5B30; /* Purong puting kulay ng letra habang nagta-type ng pangalan o email ang turista */
+    font-family: 'Open Sans', sans-serif; /* Bold at malinis na font text style para sa loob ng input field box */
+    font-size: 0.95rem; /* Sukat ng laki ng letra para sa isinusulat na impormasyon */
+    box-sizing: border-box; /* Pinipigilan ang pag-apaw ng padding box sa kabuuang sukat ng lapad ng kahon */
+}
+
+.news-letterForm input::placeholder {
+    color: #4a5568; /* EXACT MATCH: Madilim na kulay gray para sa mga gabay na salita tulad ng "Name" at "Email" */
+}
+
+.news-letterForm input:focus {
+    outline: none; /* Tinatago ang automatic na dilaw o asul na highlight line ng browser kapag nagki-click sa loob */
+    border-color: rgba(255, 255, 255, 0.2); /* Bahagyang lumilinaw ang puting border kapag aktibong nagsusulat sa loob */
+}
+
+/* --- THE SUBMIT BUTTON (Coral Pink Highlight Color katulad ng sa Tikigo sample image) --- */
+.btm-submit {
+    align-self: flex-end; /* EXACT MATCH FIX: Isinasandal sa kanang ibabang bahagi ang submit button natin */
+    padding: 12px 30px; /* Saktong sukat ng padding para maging parihaba ang hugis ng button */
+    background-color: #ff5a5f; /* EXACT MATCH: Ang matingkad na kulay salmon/coral pink para sa accent button ng footer */
+    color: #ffffff; /* Purong puting kulay para sa salitang "Submit" para litaw na litaw tingnan */
+    border: none; /* Tinatanggal ang default na itim na border line ng browser sa paligid ng button */
+    font-family: 'Montserrat', sans-serif; /* Gagamit ng makapal na font style para sa mismong text label ng button */
+    font-weight: 600; /* Ginagawang semi-bold ang kapal ng letra para maging malinaw basahin */
+    font-size: 0.9rem; /* Sukat ng laki ng titik para sa salitang "Submit" */
+    cursor: pointer; /* Lumilitaw ang "kamay" na indicator kapag itinapat ang mouse pointer sa ibabaw ng button */
+    transition: background-color 0.2s ease, transform 0.2s ease; /* Banayad at mabilis na transition effect sa hover niyan */
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.btm-submit:hover {
+    background-color: #ff4146; /* Mas nagiging madilim o matingkad nang konti ang kulay kapag itinapat ang mouse niyo */
+    transform: translateY(-1px); /* Bahagyang umaangat nang 1px pataas ang button para sa magandang interactive feedback */
+}
+
+
+/* --- 3. ANG PINAKAILALIM NA COPYRIGHT BAR (BLACK) --- */
+.footer-bottom {
+    width: 100%; /* Sinasakop ang buong 100% na lapad ng browser mula kaliwa pakanan */
+    background-color: #141b22; /* Ang madilim na kulay ng copyright bar mo */
+    
+    /* CRUCIAL FIX: Pinalitaw ang guhit! Ginawang 2px at mas malinaw (0.2) para kitang-kita sa itaas ng black bar */
+    border-top: 2px solid rgba(255, 255, 255, 0.2); 
+    
+    padding: 25px 0; /* Nagbibigay ng espasyo sa itaas at ibaba sa loob ng copyright bar */
+    margin: 0; /* Tinitiyak na walang extra space sa labas ng bar na makakasira sa alignment */
+}
+
+/* --- 4. ANG PANLOOB NA LAYOUT NG COPYRIGHT --- */
+.footer-bottom-container {
+    display: flex; /* Gagamit ng flexbox para mapagtabi ang teksto at mga icons */
+    justify-content: space-between; /* Itutulak ang copyright text sa dulong kaliwa, at ang social links sa dulong kanan */
+    align-items: center; /* Pinapantay ang gitna ng teksto at gitna ng mga icons nang patayo para perpektong magkatapat */
+    max-width: 1200px; /* Nililimitahan ang lapad para kapantay ng iba pang containers ng website mo */
+    margin: 0 auto; /* Sentro ang buong container box na ito sa screen */
+    padding: 0 20px; /* Allowance sa kaliwa't kanan para sa maliit na screen */
+}
+
+.footer-bottom-container p {
+    font-family: 'Open Sans', sans-serif; /* Gagamit ng malinis at pormal na font style para sa copyright status niyo */
+    color: #a0aec0; /* Kulay gray-blue para malambot basahin at hindi sumasakit sa mata ng turista */
+    font-size: 0.9rem; /* Tamang sukat o liit ng letra para sa mga pinakailalim na mga copyright notices */
+    margin: 0; /* Tinatanggal ang automatic block space ng paragraph tag ng browser */
+}
+
+/* --- MGA ESTILO PARA SA MGA ICONS SA KANANG BAHAGI --- */
+.social-links-copyright {
+    display: flex; /* Pinagtatabi-tabi nang pahalang sa isang diretsong linya ang mga maliliit na icons niyo */
+    gap: 18px; /* Nagbibigay ng saktong 18px na patlang o distansya sa pagitan ng bawat icon */
+}
+
+.social-links-copyright a {
+    color: #a0aec0; /* Gray ang panimulang kulay ng mga icons para magkapares sila ng kulay ng teksto sa kaliwa */
+    font-size: 1.1rem; /* Tamang laki ng mga icons mula sa FontAwesome para hindi naman maging sobrang laking tignan */
+    text-decoration: none; /* Tinatago ang automatic na salungguhit ng mga link ng browser niyo */
+    display: inline-block; /* Ginagawang inline-block para gumana nang maayos at tama ang animation property natin */
+    transition: all 0.2s ease; /* Kontrolado ang bilis ng pagbabago ng kulay o galaw kapag itinapat ang mouse pointer niyo */
+}
+
+.social-links-copyright a:hover {
+    color: #ffffff; /* EXACT MATCH: Nagiging purong puti ang kulay ng icon kapag tinatablan ng mouse pointer niyo */
+    transform: translateY(-2px); /* Bahagyang umuusod nang 2px pataas ang icon para sa magandang interactive feedback kapag tinitingnan */
+}
