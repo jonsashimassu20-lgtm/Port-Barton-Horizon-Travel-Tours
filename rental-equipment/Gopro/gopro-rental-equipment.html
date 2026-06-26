@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Equipment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/rental-equipment/Gopro/gopro-rental-equpment.css">
+    <link rel="stylesheet" href="/rental-equipment/Gopro/gopro-responsive.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="branding">
+                <a href="/landingpage.html"><img src="/nav-bar/logo.png" alt="logo" /></a>
+                <p>Port Barton Horizon</p>
+            </div>
+
+            <nav class="nav-bar" id="nav-bar">
+                <ul class="nav-links">
+                    <li><a href="/index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/islandtours-dropdown/islandtours.html"><img src="/nav-bar/islandhoping.png"
+                                        alt="islandhoping" />Island Tours</a></li>
+                            <li><a href="/Private-tours-selection/Private-tours-selection.html"><img
+                                        src="/nav-bar/trip.png" alt="trip" />Private Tours</a></li>
+                            <li><a href="/transfer-service/transfer-service.html"><img src="/nav-bar/van.png"
+                                        alt="van" />Transfer Service</a></li>
+                            <li><a href="#"><img src="/nav-bar/vr-goggles.png" alt="goggles" />Scuba Diving</a></li>
+                            <li><a href="/rental-services/rental-services.html"><img src="/nav-bar/car.png"
+                                        alt="car" />Rental Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/travel-guides/travel-guides.html">Travel Guides</a></li>
+                    <li><a href="/share-your-experience/share-your-experience.html">Share Your Experience</a></li>
+                    <li><a href="/about-us/about-us.html">About Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="header-actions">
+                    <a href="/cart/cart.html" class="cart-icon-container">
+                        <img src="/nav-bar/cart-alt.png" alt="cart" class="cart-icon">
+                        <span class="cart-badge" id="cart-badge">0</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <div class="container-title">
+        <p>Rental Equipment</p>
+    </div>
+    <nav class="breadcrumb-nav">
+        <ul class="breadcrumbs">
+            <li><a href="../landingpage.html">Home</a></li>
+            <li><a href="../landingpage.html#top-destinations">Port Barton</a></li>
+            <li><a href="../landingpage.html#services">Port Barton Tours</a></li>
+            <li class="active">Rental equipment</li>
+        </ul>
+    </nav>
+    <section>
+        <div class="rental-equip-container">
+
+            <div class="rental-equip-wrapper">
+
+                <div class="rental-equip-left-col">
+                    <div class="slides">
+                        <img id="main-image" class="slide" src="/rental-equipment/Gopro/Image/go-pro1.jpg" alt="gopro">
+                    </div>
+
+                    <div class="slider-thumbnails">
+                        <img class="thumb" src="/rental-equipment/Gopro/Image/go-pro1.jpg" alt="gopro">
+                        <img class="thumb" src="/rental-equipment/Gopro/Image/go-pro2.jpg" alt="gopro">
+                        <img class="thumb" src="/rental-equipment/Gopro/Image/go-pro3.jpg" alt="gopro">
+                        <img class="thumb" src="/rental-equipment/Gopro/Image/go-pro4.jpg" alt="gopro">
+                    </div>
+                </div>
+
+                <div class="rental-equip-right-col">
+                    <div class="main-title">
+                        <h3>GoPro Rental</h3>
+                    </div>
+                    <div class="sub-text">
+                        <p> – Relive Every Core Memory in Crystal-Clear 4K Resolution!</p>
+                    </div>
+                    <div class="desc-text">
+                        <p>Don't let the memories fade—rent an action cam now and take home breathtaking,
+                            high-definition footage of your island getaway! 🥥🎞️✨
+                        </p>
+                    </div>
+                    <div class="price-text">
+                        <p>From: ₱ 500.00</p>
+                    </div>
+                    <form class="booking-form">
+                        <div class="input-form">
+                            <label for="gopro">Duration (Days)</label>
+                            <input type="number" id="gopro" min="1" value="1" max="45">
+
+                        </div>
+                        <p class="capped-error">The maximum duration is 45 days</p>
+                        <div class="calendar-wrapper">
+                            <div class="calendar-header">
+                                <button type="button" class="cal-btn" id="prev-month">‹</button>
+                                <span class="current-month" id="month-display">JUNE 2026</span>
+                                <button type="button" class="cal-btn" id="next-month">›</button>
+                            </div>
+                            <div class="calendar-days-grid">
+                                <div>S</div>
+                                <div>M</div>
+                                <div>T</div>
+                                <div>W</div>
+                                <div>T</div>
+                                <div>F</div>
+                                <div>S</div>
+                            </div>
+                            <div class="calendar-numbers-grid" id="days-container"></div>
+                            <input type="hidden" id="selected-date" name="booking-date" required>
+                        </div>
+                        <div class="booking-note" id="total-price">
+                            Date is required - Please choose one above
+                        </div>
+                        <button type="button" class="btn-booking">BOOK NOW</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="desc-container">
+            <div class="desc-header">
+                <h3>Description</h3>
+            </div>
+            <div class="desc-sub-header">
+                <p>Categories: <span class="sub-header"> GoPro Rentals</span></p>
+            </div>
+            <div class="description-text">
+                <p>Preserve your island experiences forever without the heavy price tag of buying a camera! From
+                    underwater reef treks and island-hopping tours to jungle hikes, our premium action camera rentals
+                    deliver ultra-crisp 4K footage of your best moments. Built to survive deep waters and rugged
+                    terrain, it is the ultimate tool for documenting your journey.</p>
+            </div>
+            <form>
+                <div class="description-details">
+                    <label class="radio-label">
+                        <div class="radio-text-group">
+                            <input type="radio" id="rental-rates" name="duration" checked>
+                            <span class="label-title">Rental Rates</span>
+                        </div>
+
+                    </label>
+
+                    <p id="rental-details" class="show">The More Days You Explore, The Less You Pay! 🌴</p>
+                    <ul id="price-info" class="show">
+                        <li><strong> Week 1 (Days 1–7):</strong> Only ₱500 daily</li>
+                        <li><strong> Week 2 (Days 8–14):</strong> Drops to ₱450 daily</li>
+                        <li><strong> Weeks 3–4 (Days 15–30):</strong> Only ₱400 daily</li>
+                        <li><strong> Extended Journey (Days 31-45):</strong> Steal it for ₱350 daily</li>
+                    </ul>
+                </div>
+
+                <div class="description-details">
+                    <label class="radio-label">
+                        <div class="radio-text-group">
+                            <input type="radio" id="pickup-drop-off" name="duration">
+                            <span class="label-title">Pick-up and Drop-off Options</span>
+                        </div>
+
+                    </label>
+
+                    <p id="pickup-dropoff-details">Enjoy hassle-free pick-up and drop-off directly within the Port
+                        Barton town proper! 📍</p>
+                </div>
+
+                <div class="description-details">
+                    <label class="radio-label">
+                        <div class="radio-text-group">
+                            <input type="radio" id="id-or-cash" name="duration">
+                            <span class="label-title">ID or Cash Deposits</span>
+                        </div>
+
+                    </label>
+
+                    <p id="idcash-details">Leave a clear photocopy of your passport accompanied by a refundable cash
+                        security bond of ₱10,000. This cash deposit will be handed back to you in full once the items
+                        are returned undamaged.</p>
+                </div>
+
+                <div class="description-details">
+                    <label class="radio-label">
+                        <div class="radio-text-group">
+                            <input type="radio" id="insurance" name="duration">
+                            <span class="label-title">Insurance</span>
+                        </div>
+
+                    </label>
+
+                    <p id="insurance-details">All renters are required to review and sign our standard rental agreement
+                        upon receiving the equipment. This package includes a mandatory liability policy that covers
+                        specific third-party liabilities up to ₱100,000. However, please be advised that this basic
+                        coverage strictly excludes theft, loss, or physical damage to the rented motorcycle or GoPro
+                        unit itself. The renter maintains full financial responsibility for any repair or replacement
+                        costs incurred during the rental period.</p>
+                </div>
+            </form>
+
+        </div>
+    </section>
+    <section id="inclusions">
+        <div class="inclusions-title">
+            <h3>Inclusions and Exclusions</h3>
+            <p>This tour package includes several items or services that you will find listed below in the “Included”
+                list. The items or services listed under the “Not Included” list are not included in the price of this
+                tour package.</p>
+
+            <div class="inclusions-grid">
+                <div class="included">
+                    <h4>Included</h4>
+                    <div class="included-list"><img src="/assets icons services/check-circle1.png" alt="icon"><span
+                            class="included-text"> GoPro Camera (Latest Model Available)</span></div>
+                    <div class="included-list"><img src="/assets icons services/check-circle1.png" alt="icon"><span
+                            class="included-text">Waterproof Housing – Ideal for underwater shots</span></div>
+                    <div class="included-list"><img src="/assets icons services/check-circle1.png" alt="icon"><span
+                            class="included-text"> Extra Battery – Keep shooting longer</span></div>
+                    <div class="included-list"><img src="/assets icons services/check-circle1.png" alt="icon"><span
+                            class="included-text">64GB Memory Card – Plenty of space for your videos</span></div>
+                    <div class="included-list"><img src="/assets icons services/check-circle1.png" alt="icon"><span
+                            class="included-text">Floating Hand Grip – Secure your camera while snorkeling</span></div>
+                    <div class="included-list"><img src="/assets icons services/check-circle1.png" alt="icon"><span
+                            class="included-text"> Charger & Cables – Hassle-free charging</span></div>
+                </div>
+                <div class="not-included">
+                    <h4>Not included</h4>
+                    <div class="included-list"><img src="/assets icons services/x-circle.png" alt="icon" /><span
+                            class="included-text">Personal Gadget Insurance: Damage from deep-sea drops or user neglect
+                            is not included.</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="main-container">
+        <h3 class="guest-text">Guests who booked this, also loved</h3>
+        <div class="container">
+            <div class="container-content">
+                <div class="card-content">
+                    <div class="rental-card-content">
+                        <div class="card-picture">
+                            <a href="/rental-services/rental-services.html"><img
+                                    src="/rental-services/image/honda-beat.jpg" alt="Port Barton Tour B" /></a>
+                        </div>
+                        <div class="title-text">Motorcycle Rental</div>
+                        <div class="main-title">Explore Every Destination with Complete Freedom!</div>
+                        <div class="title-price">From: 800</div>
+                        <div class="title-select"><a href="/rental-services/rental-services.html">VIEW DETAILS</a></div>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="rental-card-content">
+                        <div class="card-picture">
+                            <a href="/rental-services/rental-services.html"><img src="/rental-services/image/drone.png"
+                                    alt="Book Land Tours" /></a>
+                        </div>
+                        <div class="title-text">Drone Rental</div>
+                        <div class="main-title">Fly High and Record Every Adventure from Above! </div>
+                        <div class="title-price">From: 1,500</div>
+                        <div class="title-select">
+                            <a href="/rental-services/rental-services.html">VIEW DETAILS</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="rental-card-content">
+                        <div class="card-picture">
+                            <a href="/rental-services/rental-services.html"><img src="/rental-services/image/vios.png"
+                                    alt="Book Land Tours" /></a>
+                        </div>
+                        <div class="title-text">Toyota Vios (Sedan)</div>
+                        <div class="main-title">Fly High and Record Every Adventure from Above! </div>
+                        <div class="title-price">From: 1,500</div>
+                        <div class="title-select">
+                            <a href="/rental-services/rental-services.html">VIEW DETAILS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-column1">
+                <div class="logo">
+                    <img src="/assets islands/logo.png" alt="logo" />
+                    <h2>Port Barton Horizon</h2>
+                </div>
+                <p>Explore the pristine beauty of untouched islands and beaches. Plan and book your dream trip with us
+                    online today!</p>
+                <div class="social-links">
+                    <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:jon.sashimassu@gmail.com"><i class="fa-brands fa-google"></i></a>
+                    <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.tiktok.com"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-column2">
+                <div class="quick-links">
+                    <h3>Quick links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Booking</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-column3">
+                <div class="news-letter">
+                    <h3>NEWSLETTER</h3>
+                    <p>Don't miss out on local travel tips, hidden gems, and the latest updates!</p>
+                    <form class="news-letterForm">
+                        <input type="text" placeholder="Name" required />
+                        <input type="email" placeholder="Email" required />
+                        <button type="submit" class="btm-submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>Copyright © Port Barton Horizon • All Rights Reserved</p>
+                <div class="social-links-copyright">
+                    <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:jon.sashimassu@gmail.com"><i class="fa-brands fa-google"></i></a>
+                    <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.tiktok.com"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="/nav-bar/nav-bar.js"></script>
+    <script src="/cart/badge.js"></script>
+    <script src="/rental-equipment/Gopro/gopro-imageslider.js"></script>
+    <script src="/rental-equipment/Gopro/gopro-description-toggle.js"></script>
+    <script src="/rental-equipment/Gopro/gopro-calendar.js"></script>
+</body>
+
+</html>

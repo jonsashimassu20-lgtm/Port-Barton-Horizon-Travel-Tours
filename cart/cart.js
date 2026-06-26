@@ -1,0 +1,246 @@
+const detailsCol = document.getElementById('booking-details-col');
+const summaryCol = document.getElementById('order-summary-col');
+const emptyMessage = document.getElementById('empty-cart-message');
+const cartItemsContainer = document.getElementById('cart-items-container');
+
+function renderCart() {
+
+    const raw = localStorage.getItem('bookingData');
+
+    if (!raw || raw === '[]') {
+        detailsCol.style.display = 'none';
+        summaryCol.style.display = 'none';
+        emptyMessage.style.display = 'flex';
+        return;
+    }
+
+    let parsed = JSON.parse(raw);
+
+    if (!Array.isArray(parsed)) {
+        parsed = [parsed];
+        localStorage.setItem('bookingData', JSON.stringify(parsed));
+    }
+
+    detailsCol.style.display = 'block';
+    summaryCol.style.display = 'block';
+    emptyMessage.style.display = 'none';
+
+    cartItemsContainer.innerHTML = '';
+    let grandTotal = 0;
+
+
+    parsed.forEach((booking, index) => {
+        let itemHTML = '';
+        let itemTotal = 0;
+if (booking.equipmentType === "GoPro Rental" || booking.equipmentType === "Motorcycle Rental" 
+            || booking.equipmentType === "Drone Rental" || booking.equipmentType === "Vios(sedan) Rental" 
+        || booking.equipmentType === "Hilux(pick up) Rental" || booking.equipmentType === "Fortuner(suv) Rental") {
+            // LOGIC PARA SA COMPUTATION
+            itemTotal = parseInt(booking.price) || 0;
+            grandTotal += itemTotal;
+            const days = parseInt(booking.equipment) || 0;
+            //const rateLabel = getRateLabel(days);
+            const rateLabel = getRateLabel(days, booking.equipmentType);
+
+            // ==========================================
+            // MAGIC LOGIC PARA SA IMAGE THUMBNAIL
+            // ==========================================
+            let imageFit = "cover"; // Default na gagamitin para sa GoPro, Drone, at Motor
+
+            // Kung ang binook ay Vios Sedan, gagawin natin siyang 'contain' para hindi maputol
+            if (booking.equipmentType === "Vios(sedan) Rental" || booking.equipmentType === "Hilux(pick up) Rental"
+                 || booking.equipmentType === "Fortuner(suv) Rental") {
+                imageFit = "contain"; 
+            }
+            // ==========================================
+
+            itemHTML = `
+    <div class="cart-item">
+        <div class="col-product product-info">
+            <img src="${booking.Image}" class="thumbnail-cart" style="object-fit: ${imageFit};" />
+            <div class="product-text">
+                <h3>${booking.equipmentType}</h3>
+                <p><strong>Booking Date:</strong><br>${booking.date}</p>
+                <p><strong>Duration:</strong> ${booking.equipment}</p>
+            </div>
+        </div>
+        <div class="col-variants">
+            <div class="variant-row">
+                <span class="price-col">${rateLabel}</span>
+                <span class="qty-col">1</span>
+                <span class="sub-col">&#8369; ${itemTotal.toLocaleString()}</span>
+            </div>
+        </div>
+        <div class="col-action">
+            <button class="btn-trash" data-index="${index}">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+        </div>
+    </div>
+    `;
+        } else {
+            // LOGIC PARA SA MGA TOURS (Existing code mo)
+            const adultQty = parseInt(booking.adults) || 0;
+            const childQty = parseInt(booking.children) || 0;
+            const adultPrice = parseInt(booking.priceAdult) || 1500;
+            const childPrice = parseInt(booking.priceChild) || 750;
+
+            const adultTotal = adultQty * adultPrice;
+            const childTotal = childQty * childPrice;
+            itemTotal = adultTotal + childTotal;
+            grandTotal += itemTotal;
+
+            const childRow = childQty > 0 ? `
+            <div class="variant-row">
+                <span class="price-col">&#8369; ${childPrice.toLocaleString()} <small>(C)</small></span>
+                <span class="qty-col">${childQty}</span>
+                <span class="sub-col">&#8369; ${childTotal.toLocaleString()}</span>
+            </div>
+        ` : '';
+
+            itemHTML = `
+            <div class="cart-item">
+                <div class="col-product product-info">
+                    <img src="${booking.image || '/image_slider/tourA2.png'}" class="thumbnail-cart" />
+                    <div class="product-text">
+                        <h3>${booking.tourName || 'Port Barton Tour Package A'}</h3>
+                        <p><strong>Booking Date:</strong><br>${booking.date}</p>
+                    </div>
+                </div>
+                <div class="col-variants">
+                    <div class="variant-row">
+                        <span class="price-col">&#8369; ${adultPrice.toLocaleString()} <small>(A)</small></span>
+                        <span class="qty-col">${adultQty}</span>
+                        <span class="sub-col">&#8369; ${adultTotal.toLocaleString()}</span>
+                    </div>
+                    ${childRow}
+                </div>
+                <div class="col-action">
+                    <button class="btn-trash" data-index="${index}">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+        }
+
+        cartItemsContainer.innerHTML += itemHTML;
+    });
+
+    let displayTotal = grandTotal;
+
+    const appliedCoupon = localStorage.getItem('appliedCoupon');
+
+    if (appliedCoupon === "HORIZON10") {
+
+        const discountAmount = grandTotal * 0.10;
+        displayTotal = grandTotal - discountAmount;
+
+        localStorage.setItem('discountedTotal', displayTotal);
+    } else {
+        localStorage.setItem('discountedTotal', grandTotal);
+    }
+
+    document.getElementById('cart-subtotal').textContent = grandTotal.toLocaleString();
+    document.getElementById('cart-total').textContent = displayTotal.toLocaleString();
+
+    cartItemsContainer.querySelectorAll('.btn-trash').forEach(btn => {
+        btn.addEventListener('click', () => {
+            removeItem(parseInt(btn.getAttribute('data-index')));
+        });
+    });
+}
+
+function removeItem(index) {
+
+    let cartArray = JSON.parse(localStorage.getItem('bookingData'));
+
+    if (!Array.isArray(cartArray)) cartArray = [cartArray];
+    cartArray.splice(index, 1);
+    if (cartArray.length === 0) {
+        localStorage.removeItem('bookingData');
+    } else {
+        localStorage.setItem('bookingData', JSON.stringify(cartArray));
+    }
+    renderCart();
+    updateCartBadge();
+}
+
+renderCart();
+
+
+const proceedCheckOut = document.getElementById('checkout-btn');
+
+proceedCheckOut.addEventListener('click', (e) => {
+
+    e.preventDefault();
+
+    window.location.href = '/check-out/check-out.html';
+
+});
+
+const couponInput = document.getElementById('coupon');
+const submitBtnCoupon = document.getElementById('btn-coupon');
+
+submitBtnCoupon.addEventListener('click', () => {
+
+    const enteredCode = couponInput.value.toUpperCase();
+
+    if (enteredCode === "HORIZON10") {
+
+        localStorage.setItem('appliedCoupon', enteredCode);
+
+        alert("Success! 10% discount applied.");
+
+        renderCart();
+    } else {
+        alert("Invalid coupon code. Please try again.");
+    }
+    couponInput.value = "";
+});
+
+function getRateLabel(days, equipmentType) {
+
+    if (equipmentType === "GoPro Rental") {
+
+        if (days >= 1 && days <= 7) return "₱500/day";
+        if (days >= 8 && days <= 14) return "₱450/day";
+        if (days >= 15 && days <= 30) return "₱400/day";
+        return "₱350/day"; // Para sa 31 hanggang 45 days
+
+    } else if (equipmentType === "Motorcycle Rental") {
+
+        if (days >= 1 && days <= 7) return "₱800/day";
+        if (days >= 8 && days <= 14) return "₱700/day";
+        if (days >= 15 && days <= 30) return "₱600/day";
+        return "₱500/day";
+
+    } else if (equipmentType === "Drone Rental") {
+        
+        if (days >= 1 && days <= 7) return "₱1,500/day";
+        if (days >= 8 && days <= 14) return "₱1,300/day";
+        if (days >= 15 && days <= 30) return "₱1,100/day";
+        return "₱900/day";
+        
+    } else if (equipmentType === "Vios(sedan) Rental"){
+
+        if (days >= 1 && days <= 7) return "₱1,500/day";
+        if (days >= 8 && days <= 14) return "₱1,400/day";
+        if (days >= 15 && days <= 30) return "₱1,300/day";
+        return "₱1,200/day";
+        
+    } else if (equipmentType === "Hilux(pick up) Rental") { 
+
+        if (days >= 1 && days <= 7) return "₱2,500/day";
+        if (days >= 8 && days <= 14) return "₱2,300/day";
+        if (days >= 15 && days <= 30) return "₱2,100/day";
+        return "₱1,900/day";
+
+    } else if (equipmentType === "Fortuner(suv) Rental") { 
+
+        if (days >= 1 && days <= 7) return "₱3,500/day";
+        if (days >= 8 && days <= 14) return "₱3,300/day";
+        if (days >= 15 && days <= 30) return "₱3,100/day";
+        return "₱2,800/day";
+    }
+}

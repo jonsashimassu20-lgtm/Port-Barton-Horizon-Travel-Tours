@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Out</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/check-out/check-out.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="branding">
+                <a href="/index.html"><img src="/nav-bar/logo.png" alt="logo" /></a>
+                <p>Port Barton Horizon</p>
+            </div>
+
+            <nav class="nav-bar" id="nav-bar">
+                <ul class="nav-links">
+                    <li><a href="/index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="/service page/sevice-page.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/islandtours-dropdown/islandtours.html"><img src="/nav-bar/islandhoping.png"
+                                        alt="islandhoping" />Island Tours</a></li>
+                            <li><a href="/Private-tours-selection/Private-tours-selection.html"><img
+                                        src="/nav-bar/trip.png" alt="trip" />Private Tours</a></li>
+                            <li><a href="/transfer-service/transfer-service.html"><img src="/nav-bar/van.png"
+                                        alt="van" />Transfer Service</a></li>
+                            <li><a href="#"><img src="/nav-bar/vr-goggles.png" alt="goggles" />Scuba Diving</a></li>
+                            <li><a href="/rental-services/rental-services.html"><img src="/nav-bar/car.png" alt="car" />Rental Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/travel-guides/travel-guides.html">Travel Guides</a></li>
+                    <li><a href="/share-your-experience/share-your-experience.html">Share Your Experience</a></li>
+                    <li><a href="/about-us/about-us.html">About Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="header-actions">
+                    <a href="/cart/cart.html" class="cart-icon-container">
+                        <img src="/nav-bar/cart-alt.png" alt="cart" class="cart-icon">
+                        <span class="cart-badge" id="cart-badge">0</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <section id="main-container">
+        <div class="checkout-wrapper">
+            <div class="bill-detail-right-col">
+                <div class="form-title">
+                    <p>Billing Details</p>
+                </div>
+                <form>
+                    <div class="firstname-lastname">
+
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="fname">First name*</label>
+                                <input type="text" id="fname" name="FirstName">
+                            </div>
+
+
+                            <div class="input-group">
+                                <label for="Lname">Last name*</label>
+                                <input type="text" id="Lname" name="LastName">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="country-input">Country / Region *</label>
+
+                            <!-- Custom dropdown wrapper -->
+                            <div class="custom-select-wrapper" id="country-wrapper">
+                                <div class="custom-select-display" id="country-display">
+                                    <span id="country-display-text"></span>
+                                    <i class="ti ti-chevron-down" id="country-chevron"></i>
+                                </div>
+
+                                <!-- Search + options container -->
+                                <div class="custom-select-dropdown" id="country-dropdown">
+                                    <input type="text" id="country-search">
+                                    <ul id="country-list"></ul>
+                                </div>
+                            </div>
+
+                            <!-- Hidden input para sa actual value na mapupunta sa form -->
+                            <input type="hidden" id="country-input" name="country">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="street">Street Address*</label>
+                            <input type="text" id="street" name="street" placeholder="House number and street name">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group city">
+                            <label for="town">Town / City *</label>
+                            <input type="text" id="town" name="town">
+                        </div>
+
+                        <div class="input-group state">
+                            <label for="state-county">State / County *</label>
+                            <!-- Ito ay normal na select, mapupuno ng JS -->
+                            <select id="state-county" name="state-county">
+                                <option value="" disabled selected></option>
+                            </select>
+                        </div>
+
+                        <div class="input-group zip">
+                            <label for="zip">Postcode / ZIP *</label>
+                            <input type="text" id="zip" name="zip">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="Email">Email Address*</label>
+                            <input type="email" id="Email" name="email">
+                        </div>
+                        <div class="input-group">
+                            <label for="phone">Phone*</label>
+                            <input type="tel" id="phone" name="phonenumber">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="location">Pick up Location*</label>
+                            <input type="text" id="location" name="location">
+                        </div>
+                    </div>
+                    <div class="add-info-wrapper">
+                        <div class="additional-container">
+                            <div class="additional-title">
+                                <p> Additional Information</p>
+                            </div>
+                            <div class="message-container">
+                                <label for="add-message"> Additional information (optional)</label>
+                                <textarea id="add-message"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="right-side-wrapper">
+                <div class="booking-detail-left-col">
+                    <div class="booking-details">
+                        <div class="booking-title">
+                            <p>Your Booking</p>
+                        </div>
+                        <div class="product-name-container">
+                            <div class="product-name">
+                                <p>Product</p>
+                            </div>
+                            <div class="sub-total">
+                                <p>Subtotal</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tours-from-cart">
+
+                    </div>
+                    <div class="subtotal-title">
+                        <p>Subtotal:</p>
+                    </div>
+                    <div class="total-title">
+                        <p>Total: </p>
+                    </div>
+                </div>
+                <div class="left-bottom-col">
+                    <div class="payment-method-box">
+                        <div class="payment-title">
+                            <p>Payment Method</p>
+                        </div>
+                        <form>
+                            <div class="payment-option">
+                                <input type="radio" id="direct-transfer-input" name="payment-method"
+                                    value="bank_transfer" checked>
+                                <label for="direct-transfer-input">Pay via Bank Transfer (Direct Transfer)</label>
+                                <p id="bank-transfer-info" class="show">Make your payment directly into our bank
+                                    account. Please use your Order ID as the
+                                    payment
+                                    reference. Your booking will not be confirmed until the funds have cleared in our
+                                    account.</p>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" id="debit-credit-cards" name="payment-method"
+                                    value="debitCreditCards">
+                                <label for="debit-credit-card-inputs">Debit & Credit Cards</label>
+                                <p id="debit-credit-info">Use your credit card to pay securely through
+                                    PayMaya. Fast and easy checkout.</p>
+                            </div>
+                            <div class="payment-option">
+                                <div class="payment-option-header">
+                                    <input type="radio" id="paypal-payment" name="payment-method" value="paypal">
+                                    <label for="paypal-payment">Paypal</label>
+                                    <img src="/assets icons services/paypal-logo.png" class="paypal-logo" />
+                                </div>
+                                <p id="paypal-info">Your personal data will be used to process your order, support your
+                                    experience throughout this website, and for other purposes described in our
+                                    <a href="#"> privacy policy</a>.
+                                </p>
+                            </div>
+                            <div class="agreement-section">
+                                <input type="checkbox" id="agreement-policy" name="policy" value="agreement-policy">
+                                <label for="agreement-policy">I have read and agree to the website <a href="#"> terms
+                                        and conditions</a></label>
+                            </div>
+                            <div class="sbmit-btn">
+                                <button type="submit" id="place-order-btn" class="place-order">Place Order</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/check-out/select-country.js"></script>
+    <script src="/check-out/check-out.js"></script>
+    <script src="/check-out/toggle.js"></script>
+    <script src="/nav-bar/nav-bar.js"></script>
+    <script src="/cart/badge.js"></script>
+
+</body>
+
+</html>

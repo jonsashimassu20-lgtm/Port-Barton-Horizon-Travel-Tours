@@ -1,0 +1,333 @@
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES — GoPro Rental Page
+   Breakpoints: Mobile (<=480px) | Tablet (481px-1024px) | Desktop (1025px+, default styles already in base CSS)
+   ============================================================ */
+
+/* ============================================================
+   TABLET — 481px to 1024px
+   ============================================================ */
+@media (max-width: 1024px) {
+
+    .rental-equip-wrapper {
+        margin: 24px;
+        gap: 10px;
+    }
+
+    .rental-equip-left-col,
+    .rental-equip-right-col {
+        margin: 12px;
+    }
+
+    .slides .slide {
+        height: 260px;
+    }
+
+    .slider-thumbnails .thumb {
+        width: 64px;
+        height: 64px;
+    }
+
+    .main-title h3 {
+        font-size: 22px;
+    }
+
+    .sub-text p {
+        font-size: 26px;
+    }
+
+    .input-form {
+        width: 45%;
+    }
+
+    .inclusions-title {
+        padding: 40px 24px 0 24px;
+    }
+
+    .container-content {
+        gap: 16px;
+        padding: 15px;
+    }
+
+    .rental-card-content {
+        width: 280px;
+    }
+
+    .card-picture img {
+        width: 230px;
+        height: 170px;
+    }
+}
+
+/* ============================================================
+   MOBILE — up to 768px
+   (Stacking the two-column layout into a single column)
+   ============================================================ */
+@media (max-width: 768px) {
+
+    .rental-equip-wrapper {
+        flex-direction: column;
+        margin: 16px;
+        gap: 0;
+    }
+
+    .rental-equip-left-col {
+        order: 1;
+        flex: none;
+        width: 100%;
+        margin: 10px 0;
+        padding: 16px;
+    }
+
+    .rental-equip-right-col {
+        order: 2;
+        flex: none;
+        width: 100%;
+        margin: 10px 0;
+        gap: 16px;
+    }
+
+    .slides .slide {
+        height: 220px;
+    }
+
+    .slider-thumbnails .thumb {
+        width: 56px;
+        height: 56px;
+    }
+
+    .main-title h3 {
+        font-size: 20px;
+    }
+
+    .sub-text p {
+        font-size: 20px;
+    }
+
+    .desc-text p {
+        font-size: 14px;
+    }
+
+    .price-text p {
+        font-size: 18px;
+    }
+
+    .input-form {
+        width: 40%;
+    }
+
+    .calendar-numbers-grid div {
+        padding: 8px 0;
+        font-size: 13px;
+    }
+
+    .calendar-header {
+        padding: 10px 12px;
+    }
+
+    .booking {
+        padding: 16px;
+    }
+
+    .btn-booking {
+        padding: 13px 0;
+        font-size: 14px;
+    }
+
+    /* Section 2: Description */
+    .desc-container {
+        padding: 0 16px;
+    }
+
+    .desc-header h3 {
+        font-size: 18px;
+    }
+
+    .desc-sub-header p,
+    .description-text p {
+        font-size: 14px;
+    }
+
+    .description-details .label-title {
+        font-size: 14px;
+    }
+
+    /* Section 3: Inclusions */
+    .inclusions-title {
+        padding: 30px 16px 0 16px;
+    }
+
+    .inclusions-title h3 {
+        font-size: 18px;
+    }
+
+    .inclusions-grid {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .included,
+    .not-included {
+        min-width: 100%;
+    }
+
+    /* Section 4: Recommended cards */
+    .guest-text {
+        font-size: 20px;
+        padding: 0 16px;
+    }
+
+    .container-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 16px;
+    }
+
+    .rental-card-content {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .card-picture img {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+/* ============================================================
+   SMALL MOBILE — up to 480px
+   ============================================================ */
+@media (max-width: 480px) {
+
+    .rental-equip-wrapper {
+        margin: 10px;
+    }
+
+    .rental-equip-left-col,
+    .rental-equip-right-col {
+        margin: 6px 0;
+        padding: 12px;
+    }
+
+    .slides .slide {
+        height: 180px;
+    }
+
+    .slider-thumbnails {
+        gap: 6px;
+    }
+
+    .slider-thumbnails .thumb {
+        width: 48px;
+        height: 48px;
+    }
+
+    .main-title h3 {
+        font-size: 18px;
+    }
+
+    .sub-text p {
+        font-size: 17px;
+    }
+
+    .desc-text p {
+        font-size: 13px;
+    }
+
+    .price-text p {
+        font-size: 16px;
+    }
+
+    .calendar-header {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .calendar-days-grid,
+    .calendar-numbers-grid {
+        font-size: 12px;
+    }
+
+    .calendar-numbers-grid div {
+        padding: 6px 0;
+    }
+
+    .booking-note {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .btn-booking {
+        font-size: 13px;
+        padding: 12px 0;
+        letter-spacing: 0.5px;
+    }
+
+    .inclusions-title h3 {
+        font-size: 16px;
+    }
+
+    .inclusions-title p {
+        font-size: 13px;
+    }
+
+    .included-text {
+        font-size: 13px;
+    }
+
+    .guest-text {
+        font-size: 18px;
+    }
+
+    .rental-card-content {
+        max-width: 100%;
+    }
+
+    .title-text {
+        font-size: 0.8rem;
+    }
+
+    .main-title {
+        font-size: 1rem;
+    }
+
+    .title-price {
+        font-size: 0.85rem;
+    }
+}
+
+/* =====================================================
+   MEDIA QUERIES — MOBILE RESPONSIVE (bawat section)
+   ===================================================== */
+@media (max-width: 768px) {
+    /* Footer */
+    #footer {
+        padding: 40px 0 0 0;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    .footer-column1,
+    .footer-column2,
+    .footer-column3 {
+        width: 100%;
+    }
+
+    .footer-column1 p {
+        max-width: 100%;
+    }
+
+    .news-letterForm {
+        max-width: 100%;
+    }
+
+    .footer-bottom-container {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 0 20px;
+    }
+}

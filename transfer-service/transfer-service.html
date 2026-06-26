@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <title>travel&tours</title>
+    <link rel="stylesheet" href="/transfer-service/transfer-service.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="branding">
+                <a href="/index.html"><img src="/nav-bar/logo.png" alt="logo" /></a>
+                <p>Port Barton Horizon</p>
+            </div>
+
+            <nav class="nav-bar" id="nav-bar">
+                <ul class="nav-links">
+                    <li><a href="/index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="/service page/sevice-page.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/islandtours-dropdown/islandtours.html"><img src="/nav-bar/islandhoping.png"
+                                        alt="islandhoping" />Island Tours</a></li>
+                            <li><a href="/Private-tours-selection/Private-tours-selection.html"><img
+                                        src="/nav-bar/trip.png" alt="trip" />Private Tours</a></li>
+                            <li><a href="/transfer-service/transfer-service.html"><img src="/nav-bar/van.png"
+                                        alt="van" />Transfer Service</a></li>
+                            <li><a href="#"><img src="/nav-bar/vr-goggles.png" alt="goggles" />Scuba Diving</a></li>
+                            <li><a href="/rental-services/rental-services.html"><img src="/nav-bar/car.png"
+                                        alt="car" />Rental Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/travel-guides/travel-guides.html">Travel Guides</a></li>
+                    <li><a href="/share-your-experience/share-your-experience.html">Share Your Experience</a></li>
+                    <li><a href="/about-us/about-us.html">About Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="header-actions">
+                    <a href="/cart/cart.html" class="cart-icon-container">
+                        <img src="/nav-bar/cart-alt.png" alt="cart" class="cart-icon">
+                        <span class="cart-badge" id="cart-badge">0</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <section id="van-container">
+        <div class="container-title">
+            <p> Transfer Service</p>
+        </div>
+        <div class="radio-wrapper">
+            <p id="transfer-count-text">Private Transfers: 6 results found</p>
+            <div class="private-btn">
+                <select id="select-btn" name="select-btn">
+                    <option value="" disabled selected hidden class="select-text">Select your van transfer option</option>
+                    <option id="private-btn" value="private">Private</option>
+                    <option id="shared-btn" value="shared">Shared</option>
+                </select>  
+            </div>
+        </div>
+
+        <div id="private-transfer-wrapper" class="private-transfer-wrapper">
+
+            <div class="van-transfer-card">
+                <div class="van-transfer-card-content">
+                    <div class="transfer-thumbnails">
+                        <img src="/transfer-service/image/van-transfer-thumbnails.png">
+                        <h3 class="van-transfer-title"><a href="#"> Private Van Transfer Puerto Princesa City - Port
+                                Barton</a></h3>
+                    </div>
+                    <div class="transfer-time">
+                        <img src="/transfer-service/image/clock.png">
+                        <p>4 Hours</p>
+                    </div>
+                    <div class="transfer-availability">
+                        <img src="/transfer-service/image/calendar.png">
+                        <p>Booking Available Daily</p>
+                    </div>
+                    <div class="van-transfer-btn">
+                        <span class="price">From: Php 6,000</span>
+                        <a href="#">Schedule Transfer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="van-transfer-card">
+                <div class="van-transfer-card-content">
+                    <div class="transfer-thumbnails">
+                        <img src="/transfer-service/image/PB-Puerto Princesa.png">
+                        <h3 class="van-transfer-title"><a href="#"> Private Van Transfer Port
+                                Barton - Puerto Princesa City </a></h3>
+                    </div>
+                    <div class="transfer-time">
+                        <img src="/transfer-service/image/clock.png">
+                        <p>4 Hours</p>
+                    </div>
+                    <div class="transfer-availability">
+                        <img src="/transfer-service/image/calendar.png">
+                        <p>Booking Available Daily</p>
+                    </div>
+                    <div class="van-transfer-btn">
+                        <span class="price">From: Php 6,000</span>
+                        <a href="#">Schedule Transfer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="van-transfer-card">
+                <div class="van-transfer-card-content">
+                    <div class="transfer-thumbnails">
+                        <img src="/transfer-service/image/PB-Balabac.png">
+                        <h3 class="van-transfer-title"><a href="#"> Private Van Transfer Port
+                                Barton - <br>Balabac</a></h3>
+                    </div>
+                    <div class="transfer-time">
+                        <img src="/transfer-service/image/clock.png">
+                        <p>4 Hours</p>
+                    </div>
+                    <div class="transfer-availability">
+                        <img src="/transfer-service/image/calendar.png">
+                        <p>Booking Available Daily</p>
+                    </div>
+                    <div class="van-transfer-btn">
+                        <span class="price">From: Php 6,000</span>
+                        <a href="#">Schedule Transfer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="van-transfer-card">
+                <div class="van-transfer-card-content">
+                    <div class="transfer-thumbnails">
+                        <img src="/transfer-service/image/PB-Elnido.png">
+                        <h3 class="van-transfer-title"><a href="#"> Private Van Transfer Port
+                                Barton - <br>Elnido</a></h3>
+                    </div>
+                    <div class="transfer-time">
+                        <img src="/transfer-service/image/clock.png">
+                        <p>4 Hours</p>
+                    </div>
+                    <div class="transfer-availability">
+                        <img src="/transfer-service/image/calendar.png">
+                        <p>Booking Available Daily</p>
+                    </div>
+                    <div class="van-transfer-btn">
+                        <span class="price">From: Php 6,000</span>
+                        <a href="#">Schedule Transfer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="van-transfer-card">
+                <div class="van-transfer-card-content">
+                    <div class="transfer-thumbnails">
+                        <img src="/transfer-service/image/PB-Underground.png">
+                        <h3 class="van-transfer-title"><a href="#"> Private Van Transfer Port
+                                Barton - Underground River</a></h3>
+                    </div>
+                    <div class="transfer-time">
+                        <img src="/transfer-service/image/clock.png">
+                        <p>4 Hours</p>
+                    </div>
+                    <div class="transfer-availability">
+                        <img src="/transfer-service/image/calendar.png">
+                        <p>Booking Available Daily</p>
+                    </div>
+                    <div class="van-transfer-btn">
+                        <span class="price">From: Php 6,000</span>
+                        <a href="#">Schedule Transfer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="van-transfer-card">
+                <div class="van-transfer-card-content">
+                    <div class="transfer-thumbnails">
+                        <img src="/transfer-service/image/PB-taytay.png">
+                        <h3 class="van-transfer-title"><a href="#"> Private Van Transfer Port
+                                Barton - <br>Taytay</a></h3>
+                    </div>
+                    <div class="transfer-time">
+                        <img src="/transfer-service/image/clock.png">
+                        <p>4 Hours</p>
+                    </div>
+                    <div class="transfer-availability">
+                        <img src="/transfer-service/image/calendar.png">
+                        <p>Booking Available Daily</p>
+                    </div>
+                    <div class="van-transfer-btn">
+                        <span class="price">From: Php 6,000</span>
+                        <a href="#">Schedule Transfer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="shared-transfer-wrapper" class="shared-transfer-wrapper hidden">
+
+           <div class="van-transfer-card">
+                <div class="van-transfer-card-content">
+                    <div class="transfer-thumbnails">
+                        <img src="/transfer-service/image/van-transfer-thumbnails.png">
+                        <h3 class="van-transfer-title"><a href="#"> Private Van Transfer Puerto Princesa City - Port
+                                Barton</a></h3>
+                    </div>
+                    <div class="transfer-time">
+                        <img src="/transfer-service/image/clock.png">
+                        <p>4 Hours</p>
+                    </div>
+                    <div class="transfer-availability">
+                        <img src="/transfer-service/image/calendar.png">
+                        <p>Booking Available Daily</p>
+                    </div>
+                    <div class="van-transfer-btn">
+                        <span class="price">From: Php 700</span>
+                        <a href="#">Schedule Transfer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="van-transfer-card">
+                <div class="van-transfer-card-content">
+                    <div class="transfer-thumbnails">
+                        <img src="/transfer-service/image/PB-Puerto Princesa.png">
+                        <h3 class="van-transfer-title"><a href="#"> Private Van Transfer Port
+                                Barton - Puerto Princesa City </a></h3>
+                    </div>
+                    <div class="transfer-time">
+                        <img src="/transfer-service/image/clock.png">
+                        <p>4 Hours</p>
+                    </div>
+                    <div class="transfer-availability">
+                        <img src="/transfer-service/image/calendar.png">
+                        <p>Booking Available Daily</p>
+                    </div>
+                    <div class="van-transfer-btn">
+                        <span class="price">From: Php 700</span>
+                        <a href="#">Schedule Transfer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="van-transfer-card">
+                <div class="van-transfer-card-content">
+                    <div class="transfer-thumbnails">
+                        <img src="/transfer-service/image/PB-Balabac.png">
+                        <h3 class="van-transfer-title"><a href="#"> Private Van Transfer Port
+                                Barton - <br>Balabac</a></h3>
+                    </div>
+                    <div class="transfer-time">
+                        <img src="/transfer-service/image/clock.png">
+                        <p>4 Hours</p>
+                    </div>
+                    <div class="transfer-availability">
+                        <img src="/transfer-service/image/calendar.png">
+                        <p>Booking Available Daily</p>
+                    </div>
+                    <div class="van-transfer-btn">
+                        <span class="price">From: Php 700</span>
+                        <a href="#">Schedule Transfer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="van-transfer-card">
+                <div class="van-transfer-card-content">
+                    <div class="transfer-thumbnails">
+                        <img src="/transfer-service/image/PB-Elnido.png">
+                        <h3 class="van-transfer-title"><a href="#"> Private Van Transfer Port
+                                Barton - <br>Elnido</a></h3>
+                    </div>
+                    <div class="transfer-time">
+                        <img src="/transfer-service/image/clock.png">
+                        <p>4 Hours</p>
+                    </div>
+                    <div class="transfer-availability">
+                        <img src="/transfer-service/image/calendar.png">
+                        <p>Booking Available Daily</p>
+                    </div>
+                    <div class="van-transfer-btn">
+                        <span class="price">From: Php 700</span>
+                        <a href="#">Schedule Transfer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="van-transfer-card">
+                <div class="van-transfer-card-content">
+                    <div class="transfer-thumbnails">
+                        <img src="/transfer-service/image/PB-Underground.png">
+                        <h3 class="van-transfer-title"><a href="#"> Private Van Transfer Port
+                                Barton - Underground River</a></h3>
+                    </div>
+                    <div class="transfer-time">
+                        <img src="/transfer-service/image/clock.png">
+                        <p>4 Hours</p>
+                    </div>
+                    <div class="transfer-availability">
+                        <img src="/transfer-service/image/calendar.png">
+                        <p>Booking Available Daily</p>
+                    </div>
+                    <div class="van-transfer-btn">
+                        <span class="price">From: Php 700</span>
+                        <a href="#">Schedule Transfer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="van-transfer-card">
+                <div class="van-transfer-card-content">
+                    <div class="transfer-thumbnails">
+                        <img src="/transfer-service/image/PB-taytay.png">
+                        <h3 class="van-transfer-title"><a href="#"> Private Van Transfer Port
+                                Barton - <br>Taytay</a></h3>
+                    </div>
+                    <div class="transfer-time">
+                        <img src="/transfer-service/image/clock.png">
+                        <p>4 Hours</p>
+                    </div>
+                    <div class="transfer-availability">
+                        <img src="/transfer-service/image/calendar.png">
+                        <p>Booking Available Daily</p>
+                    </div>
+                    <div class="van-transfer-btn">
+                        <span class="price">From: Php 700</span>
+                        <a href="#">Schedule Transfer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-column1">
+                <div class="logo"> <img src="/assets islands/logo.png" alt="logo" />
+                    <h2>Port Barton Horizon</h2>
+                </div>
+                <p>Explore the pristine beauty of untouched islands and beaches.</p>
+                <p>Plan and book your dream trip with us online today!</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://instagram.com" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:jon.sashimassu@gmail.com" aria-label="Gmail"><i class="fa-brands fa-google"></i></a>
+                    <a href="https://x.com/" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.tiktok.com" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-column2">
+                <div class="quick-links">
+                    <h3>Quick links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Booking</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-column3">
+                <div class="news-letter">
+                    <h3>NEWSLETTER</h3>
+                    <p>Don't miss out on local travel tips, hidden gems, and the latest Port Barton
+                        updates—straight
+                        to your inbox!</p>
+                    <form class="news-letterForm">
+                        <input type="text" placeholder="Name" required />
+                        <input type="email" placeholder="Email" required />
+                        <button type="submit" class="btm-submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>Copyright © Port Barton Horizon • All Rights Reserved</p>
+                <div class="social-links-copyright"> <a href="https://facebook.com" aria-label="Facebook"><i
+                            class="fa-brands fa-facebook"></i></a> <a href="https://instagram.com"
+                        aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a> <a
+                        href="mailto:jon.sashimassu@gmail.com" aria-label="Gmail"><i
+                            class="fa-brands fa-google"></i></a> <a href="https://x.com/" aria-label="X"><i
+                            class="fa-brands fa-x-twitter"></i></a> <a href="https://www.tiktok.com"
+                        aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a> </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="/nav-bar/nav-bar.js"></script>
+    <script src="/cart/badge.js"></script>
+    <script src="/transfer-service/transfer-toggle.js"></script>
+</body>
+
+
+
+</html>

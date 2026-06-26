@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port Barton Package Tour A</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/Private-tours/private-portbarton-tourA/private-packagetourA.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="branding">
+                <a href="/landingpage.html"><img src="/nav-bar/logo.png" alt="logo" /></a>
+                <p>Port Barton Horizon</p>
+            </div>
+
+            <nav class="nav-bar" id="nav-bar">
+                <ul class="nav-links">
+                    <li><a href="/index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="/service page/sevice-page.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/islandtours-dropdown/islandtours.html"><img src="/nav-bar/islandhoping.png"
+                                        alt="islandhoping" />Island Tours</a></li>
+                            <li><a href="/Private-tours-selection/Private-tours-selection.html"><img
+                                        src="/nav-bar/trip.png" alt="trip" />Private Tours</a></li>
+                            <li><a href="/transfer-service/transfer-service.html"><img src="/nav-bar/van.png"
+                                        alt="van" />Transfer Service</a></li>
+                            <li><a href="#"><img src="/nav-bar/vr-goggles.png" alt="goggles" />Scuba Diving</a></li>
+                            <li><a href="/rental-services/rental-services.html"><img src="/nav-bar/car.png" alt="car" />Rental Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/travel-guides/travel-guides.html">Travel Guides</a></li>
+                    <li><a href="/share-your-experience/share-your-experience.html">Share Your Experience</a></li>
+                    <li><a href="/about-us/about-us.html">About Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="header-actions">
+                    <a href="/cart/cart.html" class="cart-icon-container">
+                        <img src="/nav-bar/cart-alt.png" alt="cart" class="cart-icon">
+                        <span class="cart-badge" id="cart-badge">0</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <nav class="breadcrumb-nav">
+        <ul class="breadcrumbs">
+            <li><a href="../landingpage.html">Home</a></li>
+            <li><a href="../landingpage.html#top-destinations">Port Barton</a></li>
+            <li><a href="../landingpage.html#services">Port Barton Tours</a></li>
+            <li class="active">Port Barton Island Hopping Tour Package A (Private)</li>
+        </ul>
+    </nav>
+    <section id="travel">
+        <div class="travel-image-wrapper">
+            <img src="/assets islands/travel.jpg" alt="travel">
+            <div class="travel-content">
+                <h2>Experience Port Barton Islands</h2>
+                <p>Explore for the Day, or Stay for the Night—Your Ultimate Island Getaway Awaits.</p>
+                <div class="travel-info">
+                    <a href="#">Travel tips ↗</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="gallery">
+        <div class="gallery-content">
+
+            <div class="gallery-left-col">
+                <div class="gallery-header">
+                    <h2>Port Barton Island Hopping Tour Package A (Private)</h2>
+                    <p><i class="fa-solid fa-map-pin"></i> Port Barton Bay - <a href="#">View on map</a></p>
+                </div>
+
+                <div class="gallery-slider">
+                    <div class="slides">
+                        <img class="slide" src="/image_slider/toura1.png" alt="toura1" />
+                        <img class="slide" src="/image_slider/tourA2.png" alt="toura2" />
+                        <img class="slide" src="/image_slider/tourA3.png" alt="toura3" />
+                        <img class="slide" src="/image_slider/toura4.png" alt="toura4" />
+                        <img class="slide" src="/image_slider/tourA5.png" alt="toura5" />
+                        <img class="slide" src="/image_slider/tourA6.png" alt="toura6" />
+                        <img class="slide" src="/image_slider/tourA7.png" alt="toura7" />
+                        <img class="slide" src="/image_slider/tourA8.png" alt="toura8" />
+                    </div>
+                    <button class="slider-btn prev" onclick="prevSlide()">&#10094;</button>
+                    <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
+                </div>
+
+                <div class="slider-thumbnails">
+                    <img class="thumbnail active" src="/image_slider/toura1.png" alt="toura1" />
+                    <img class="thumbnail" src="/image_slider/tourA2.png" alt="toura2" />
+                    <img class="thumbnail" src="/image_slider/tourA3.png" alt="toura3" />
+                    <img class="thumbnail" src="/image_slider/toura4.png" alt="toura4" />
+                    <img class="thumbnail" src="/image_slider/tourA5.png" alt="toura5" />
+                    <img class="thumbnail" src="/image_slider/tourA6.png" alt="toura6" />
+                    <img class="thumbnail" src="/image_slider/tourA7.png" alt="toura7" />
+                    <img class="thumbnail" src="/image_slider/tourA8.png" alt="toura8" />
+                </div>
+            </div>
+
+            <div class="gallery-right-col">
+                <div class="booking">
+                    <div class="booking-price">
+                        From: <span>₱4,000</span>
+                    </div>
+                    <form class="booking-form">
+                        <div class="form-group">
+                            <input type="number" id="adults" min="1" value="1">
+                            <label for="adults">Adults</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="children" min="0" value="0">
+                            <label for="children">Children (1-2 years old)</label>
+                        </div>
+                        <div class="calendar-wrapper">
+                            <div class="calendar-header">
+                                <button type="button" class="cal-btn" id="prev-month">‹</button>
+                                <span class="current-month" id="month-display">June 2026</span>
+                                <button type="button" class="cal-btn" id="next-month">›</button>
+                            </div>
+                            <div class="calendar-days-grid">
+                                <div>S</div>
+                                <div>M</div>
+                                <div>T</div>
+                                <div>W</div>
+                                <div>T</div>
+                                <div>F</div>
+                                <div>S</div>  
+                            </div>
+                            <div class="calendar-numbers-grid" id="days-container"></div>
+                            <input type="hidden" id="selected-date" name="booking-date" required>
+                        </div>
+                        <div class="booking-note" id="total-price">
+                            Date is required - Please choose one above
+                        </div>
+                        <p class="deposit-text">Pay 15% deposit</p>
+                        <button type="button" class="btn-booking">BOOK NOW</button>
+                    </form>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="iterinary">
+        <div class="description-container">
+            <h3>Description</h3>
+            <div class="description-text-container">
+                <div class="iterinary-item">
+                    <img src="/assets icons services/flag.png" alt="flag" />
+                    <span class="desc-text">Port Barton</span>
+                </div>
+                <div class="iterinary-item">
+                    <img src="/assets icons services/clock.png" alt="clock" />
+                    <span class="desc-text">Around 8 hours</span>
+                </div>
+                <div class="iterinary-item">
+                    <img src="/assets icons services/people.png" alt="people" />
+                    <span class="desc-text">Public Tour</span>
+                </div>
+            </div>
+            <div class="overview">
+                <p>Categories: Boat Tour, Island Hopping</p>
+            </div>
+            <div class="categories-text">
+                <p>This Tour A goes by the name of THE MUST-SEE. It brings together the most spectacular coastal
+                    highlights in Port Barton. Through this trip, you can look forward to thrilling experiences both by
+                    exploring colorful underwater habitats and participating in shore adventures.</p>
+            </div>
+            <div class="iterinary-title">
+                <h3>Program and Itinerary</h3>
+            </div>
+            <div class="categories-text">
+                <p>This full-day trip runs for roughly 8 hours. You will see the top highlights and planned activities
+                    for your adventure outlined below.</p>
+            </div>
+
+            <div class="iterinary-list">
+                <div class="icon-list">
+                    <div class="timeline-left">
+                        <img src="/assets icons services/flag-chequered.png" alt="icon" />
+                    </div>
+                    <div class="timeline-right">
+                        <div class="timeline-title-row">
+                            <span class="list-text">Meeting At Alex Coffee House</span>
+                            <h4 class="time-badge">8:30 AM</h4>
+                        </div>
+                        <p>Our meeting point is at our office in Tiu Homestay. We’ll move to the beach for the departure
+                            which will happen at 9:00AM.</p>
+                    </div>
+                </div>
+                <div class="icon-list">
+                    <div class="timeline-left">
+                        <img src="/assets icons services/pin.png" alt="icon" />
+                    </div>
+                    <div class="timeline-right">
+                        <div class="timeline-title-row">
+                            <span class="list-text">Twin Reef</span>
+                            <h4 class="time-badge">9:30 AM</h4>
+                        </div>
+                        <p>We’ll stop at this first destination where you can snorkel and dive, and see more corals
+                            reefs and more marine species.</p>
+                    </div>
+                </div>
+                <div class="icon-list">
+                    <div class="timeline-left">
+                        <img src="/assets icons services/pin.png" alt="icon" />
+                    </div>
+                    <div class="timeline-right">
+                        <div class="timeline-title-row">
+                            <span class="list-text">Turtle Spot</span>
+                            <h4 class="time-badge">10:30 AM</h4>
+                        </div>
+                        <p>We’ll stop at the turtles spot where you’ll be able to swim, snorkel and take adventures with
+                            the sea turtles.</p>
+                    </div>
+                </div>
+                <div class="icon-list">
+                    <div class="timeline-left">
+                        <img src="/assets icons services/pin.png" alt="icon" />
+                    </div>
+                    <div class="timeline-right">
+                        <div class="timeline-title-row">
+                            <span class="list-text">Exotic Island</span>
+                            <h4 class="time-badge">11:30 AM</h4>
+                        </div>
+                        <p>We’ll stop at this destination where you’ll be able to swim, snorkel, have lunch, lay down at
+                            the beach under the sun, do sports if you want too and more.</p>
+                    </div>
+                </div>
+                <div class="icon-list">
+                    <div class="timeline-left">
+                        <img src="/assets icons services/pin.png" alt="icon" />
+                    </div>
+                    <div class="timeline-right">
+                        <div class="timeline-title-row">
+                            <span class="list-text">Fantastic Reef</span>
+                            <h4 class="time-badge">1:00 PM</h4>
+                        </div>
+                        <p>We’ll stop on this spot where you’ll be able to swim and see different coral reef building
+                            and other marine species.</p>
+                    </div>
+                </div>
+                <div class="icon-list">
+                    <div class="timeline-left">
+                        <img src="/assets icons services/pin.png" alt="icon" />
+                    </div>
+                    <div class="timeline-right">
+                        <div class="timeline-title-row">
+                            <span class="list-text">Paradise Island</span>
+                            <h4 class="time-badge">2:30 PM</h4>
+                        </div>
+                        <p>We’ll stop at Paradise island where you can swim, do sports. This is also an alternate spot
+                            for taking the lunch depending on the wishes of the guest and the crowds. You can also
+                            decide to explore a bit the island by foot.</p>
+                    </div>
+                </div>
+                <div class="icon-list">
+                    <div class="timeline-left">
+                        <img src="/assets icons services/pin.png" alt="icon" />
+                    </div>
+                    <div class="timeline-right">
+                        <div class="timeline-title-row">
+                            <span class="list-text">Starfish Island</span>
+                            <h4 class="time-badge">3:30 PM</h4>
+                        </div>
+                        <p>We’ll stop at Starfish island where you’ll be able to swim and have fun with the starfishes.
+                            If you are lucky, we can also include the sandbar as a bonus destination for your tour!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inclusions">
+        <div class="inclusions-title">
+            <h3>Inclusions and Exclusions</h3>
+            <p>This tour package includes several items or services that you will find listed below in the “Included”
+                list. The items or services listed under the “Not Included” list are not included in the price of this
+                tour package.</p>
+
+            <div class="inclusions-grid">
+                <div class="included">
+                    <h4>Included</h4>
+                    <div class="included-list"><img src="/assets icons services/check-circle.png" alt="icon"><span
+                            class="included-text">Boat Tour</span></div>
+                    <div class="included-list"><img src="/assets icons services/check-circle.png" alt="icon"><span
+                            class="included-text">Licensed Tour Guide</span></div>
+                    <div class="included-list"><img src="/assets icons services/check-circle.png" alt="icon"><span
+                            class="included-text">Lunch/Refreshment</span></div>
+                    <div class="included-list"><img src="/assets icons services/check-circle.png" alt="icon"><span
+                            class="included-text">Free use of snorkeling</span></div>
+                    <div class="included-list"><img src="/assets icons services/check-circle.png" alt="icon"><span
+                            class="included-text">Gear and Life vest passes</span></div>
+                    <div class="included-list"><img src="/assets icons services/check-circle.png" alt="icon"><span
+                            class="included-text">Island fees</span></div>
+                </div>
+                <div class="not-included">
+                    <h4>Not included</h4>
+                    <div class="included-list"><img src="/assets icons services/x-circle.png" alt="icon" /><span
+                            class="included-text">Environmental Fee (200/person)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="additional-container">
+            <div class="additional-content">
+                <h3>Additional Information</h3>
+                <h4>Price List</h4>
+                <div class="price-list">
+                    <h5>Port Barton Tour A (Public)</h5>
+                    <p class="package-desc">Shared full-day island-hopping tour — fixed price per person (PHP) for
+                        joiners:</p>
+                    <p class="price-row">1 Guest / Joiner: PHP 1,500</p>
+
+                    <h5>Port Barton Tour A (Private)</h5>
+                    <p class="package-desc">Private full-day island-hopping tour — price per person (PHP) based on group
+                        size:</p>
+                    <p class="price-row">Min. 2 Guests: PHP 5,070</p>
+                    <p class="price-row">Min. 3 Guests: PHP 4,030</p>
+                    <p class="price-row">Min. 4 Guests: PHP 3,087</p>
+                    <p class="price-row">Min. 5 Guests: PHP 2,548</p>
+                    <p class="price-row">Min. 6 Guests: PHP 2,535</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="related-tours">
+        <div class="related-tours-container">
+            <div class="related-tours-header">
+                <h2>You might also like...</h2>
+                <div class="header-line"></div>
+            </div>
+            <div class="slider-wrapper">
+                <div class="related-tours-content">
+                    <div class="most-visit-card">
+                        <div class="card-image-box"><img src="/assets islands/starfish.jpg" alt="Tour B" /></div>
+                        <div class="card-details-box">
+                            <h4>Port Barton Tour B</h4>
+                            <p class="card-price">From: <span class="color-price">₱1,500</span></p>
+                            <div class="card-footer"><a href="#" class="book-now-link">Book Now</a></div>
+                        </div>
+                    </div>
+                    <div class="most-visit-card">
+                        <div class="card-image-box"><img src="/assets islands/bigaho.jpg" alt="Inland Tours" /></div>
+                        <div class="card-details-box">
+                            <h4>Inland tours</h4>
+                            <p class="card-price">From: <span class="color-price">₱1,500</span></p>
+                            <div class="card-footer"><a href="#" class="book-now-link">Book Now</a></div>
+                        </div>
+                    </div>
+                    <div class="most-visit-card">
+                        <div class="card-image-box"><img src="/assets islands/smart.jpg" alt="Camping" /></div>
+                        <div class="card-details-box">
+                            <h4>Camping</h4>
+                            <p class="card-price">From: <span class="color-price">₱1,500</span></p>
+                            <div class="card-footer"><a href="#" class="book-now-link">Book Now</a></div>
+                        </div>
+                    </div>
+                    <div class="most-visit-card">
+                        <div class="card-image-box"><img src="/assets islands/exotic.jpg" alt="Private Tours" /></div>
+                        <div class="card-details-box">
+                            <h4>Private Tours</h4>
+                            <p class="card-price">From: <span class="color-price">₱4,000</span></p>
+                            <div class="card-footer"><a href="#" class="book-now-link">Book Now</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-column1">
+                <div class="logo">
+                    <img src="/assets islands/logo.png" alt="logo" />
+                    <h2>Port Barton Horizon</h2>
+                </div>
+                <p>Explore the pristine beauty of untouched islands and beaches. Plan and book your dream trip with us
+                    online today!</p>
+                <div class="social-links">
+                    <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:jon.sashimassu@gmail.com"><i class="fa-brands fa-google"></i></a>
+                    <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.tiktok.com"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-column2">
+                <div class="quick-links">
+                    <h3>Quick links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Booking</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-column3">
+                <div class="news-letter">
+                    <h3>NEWSLETTER</h3>
+                    <p>Don't miss out on local travel tips, hidden gems, and the latest updates!</p>
+                    <form class="news-letterForm">
+                        <input type="text" placeholder="Name" required />
+                        <input type="email" placeholder="Email" required />
+                        <button type="submit" class="btm-submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>Copyright © Port Barton Horizon • All Rights Reserved</p>
+                <div class="social-links-copyright">
+                    <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:jon.sashimassu@gmail.com"><i class="fa-brands fa-google"></i></a>
+                    <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.tiktok.com"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <button class="lightbox-btn lightbox-prev" id="lightboxPrev">&#10094;</button>
+        <img src="" alt="Fullscreen Image" class="lightbox-img" id="lightboxImg">
+        <button class="lightbox-btn lightbox-next" id="lightboxNext">&#10095;</button>
+        <button class="lightbox-zoom" id="lightboxZoom"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+        <button class="lightbox-btn lightbox-fullscreen" id="lightboxFullscreen"><i class="fa-solid fa-expand"></i>
+        </button>
+    </div>
+
+    <script src="./jscript-packagetour/imageslider.js" defer></script>
+    <script src="/Private-tours/private-portbarton-tourA/jscript-packagetour/booking.js" defer></script>
+   <script src="/nav-bar/nav-bar.js"></script>
+    <script src="/cart/badge.js"></script>
+</body>
+
+</html>
