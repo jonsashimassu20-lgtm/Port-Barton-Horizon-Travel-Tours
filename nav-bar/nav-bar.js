@@ -1,6 +1,6 @@
 const hamburger = document.getElementById('hamburger');
 const navBar = document.getElementById('nav-bar');
-const dropdowns = document.querySelectorAll('.dropdown');
+
 
 // Toggle hamburger menu open/close
 hamburger.addEventListener('click', function () {
@@ -8,22 +8,42 @@ hamburger.addEventListener('click', function () {
     navBar.classList.toggle('active');
 });
 
-// Sa mobile, dropdown ay nag-o-open sa click, hindi sa hover
-dropdowns.forEach(function (dropdown) {
-    const link = dropdown.querySelector('a');
+// 1. I-select natin lahat ng dropdown containers
+const dropdowns = document.querySelectorAll('.dropdown');
+document.addEventListener('DOMContentLoaded', function () {
+    // 1. I-select natin lahat ng dropdown containers
+    const dropdowns = document.querySelectorAll('.dropdown');
 
-    link.addEventListener('click', function (e) {
-        const isMobile = window.innerWidth <= 768;
+    dropdowns.forEach(function (dropdown) {
+        // Ngayon, ang hahanapin niya ay yung <span>, hindi yung <i>
+        const chevron = dropdown.querySelector('.chevron-trigger');
 
-        if (isMobile) {
-            e.preventDefault();
-            dropdown.classList.toggle('open');
+        if (chevron) {
+            // Gumamit din tayo ng 'touchstart' para mabilis ang response sa mobile
+            chevron.addEventListener('click', function (e) {
+                // ITO ANG PINAKA-IMPORTANTE: 
+                // Pinipigilan nito na mag-propagate ang click sa parent links
+                e.preventDefault();
+                e.stopPropagation(); 
 
-            // Isara ang ibang bukas na dropdowns
-            dropdowns.forEach(function (other) {
-                if (other !== dropdown) {
-                    other.classList.remove('open');
-                }
+                // I-toggle ang open class para lumabas ang menu
+                dropdown.classList.toggle('open');
+
+                // Isara ang ibang bukas na dropdowns para hindi magpatong-patong
+                dropdowns.forEach(function (other) {
+                    if (other !== dropdown) {
+                        other.classList.remove('open');
+                    }
+                });
+            });
+        }
+    });
+
+    // Isara kapag nag-click kahit saan sa labas
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.dropdown')) {
+            dropdowns.forEach(function (d) {
+                d.classList.remove('open');
             });
         }
     });
