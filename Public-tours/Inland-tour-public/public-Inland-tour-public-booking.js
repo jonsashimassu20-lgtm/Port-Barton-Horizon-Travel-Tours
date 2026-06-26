@@ -131,6 +131,7 @@ function updateBookingDisplay() {
     if (dateValue === "") {
         displayDiv.textContent = "Date is required - Please choose one above";
         displayDiv.classList.remove('has-price');
+
     } else {
         const total = (numAdults * 2000) + (numChildren * 1500);
 

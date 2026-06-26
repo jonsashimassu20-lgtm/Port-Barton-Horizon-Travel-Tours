@@ -12,19 +12,26 @@
         rel="stylesheet">
     <link rel="stylesheet" href="/Public-tours/Inland-tour-public/public-Inland-tour-public.css">
 </head>
+
 <body>
-        <header>
+    <header>
         <div class="header-container">
             <div class="branding">
-                <a href="/index.html"><img src="/nav-bar/logo.png" alt="logo" /></a>
+                <a href="/index.html"><img src="/assets islands/logo2.png" alt="logo" /></a>
                 <p>Port Barton Horizon</p>
             </div>
 
             <nav class="nav-bar" id="nav-bar">
                 <ul class="nav-links">
                     <li><a href="/index.html">Home</a></li>
+
                     <li class="dropdown">
-                        <a href="/service page/sevice-page.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <a href="/service page/sevice-page.html">Services</a>
+
+                        <span class="chevron-trigger">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+
                         <ul class="dropdown-menu">
                             <li><a href="/islandtours-dropdown/islandtours.html"><img src="/nav-bar/islandhoping.png"
                                         alt="islandhoping" />Island Tours</a></li>
@@ -51,7 +58,7 @@
                 </button>
                 <div class="header-actions">
                     <a href="/cart/cart.html" class="cart-icon-container">
-                        <img src="/nav-bar/cart-alt.png" alt="cart" class="cart-icon">
+                        <img src="/assets icons services/cart-alt.png" alt="cart" class="cart-icon">
                         <span class="cart-badge" id="cart-badge">0</span>
                     </a>
                 </div>
@@ -59,14 +66,6 @@
             </div>
         </div>
     </header>
-    <nav class="breadcrumb-nav">
-        <ul class="breadcrumbs">
-            <li><a href="/landingpage.html">Home</a></li>
-            <li><a href="/landingpage.html#top-destinations">Port Barton</a></li>
-            <li><a href="/landingpage.html#services">Port Barton Tours</a></li>
-            <li class="active">Private Inland Tour</li>
-        </ul>
-    </nav>
 
     <section id="travel">
         <div class="travel-image-wrapper">
@@ -99,10 +98,8 @@
                             alt="tourb3" />
                         <img class="slide" src="/Public-tours/package-tourB-public/images/package-tourB1.jpg"
                             alt="tourb4" />
-                        <img class="slide" src="/Private-tours/private-inlandtour/images/naonao.jpg"
-                            alt="tourb5" />
-                        <img class="slide" src="/Private-tours/private-inlandtour/images/sanvicente.jpg"
-                            alt="tourb6" />
+                        <img class="slide" src="/Private-tours/private-inlandtour/images/naonao.jpg" alt="tourb5" />
+                        <img class="slide" src="/Private-tours/private-inlandtour/images/sanvicente.jpg" alt="tourb6" />
                         <img class="slide" src="/Public-tours/package-tourB-public/images/package-tourB7.jpg"
                             alt="tourb7" />
                         <img class="slide" src="/Private-tours/private-inlandtour/images/wine-sunset.jpg"
@@ -121,10 +118,8 @@
                         alt="toura3" />
                     <img class="thumbnail" src="/Public-tours/package-tourB-public/images/package-tourB1.jpg"
                         alt="toura4" />
-                    <img class="thumbnail" src="/Private-tours/private-inlandtour/images/naonao.jpg"
-                        alt="toura5" />
-                    <img class="thumbnail" src="/Private-tours/private-inlandtour/images/sanvicente.jpg"
-                        alt="toura6" />
+                    <img class="thumbnail" src="/Private-tours/private-inlandtour/images/naonao.jpg" alt="toura5" />
+                    <img class="thumbnail" src="/Private-tours/private-inlandtour/images/sanvicente.jpg" alt="toura6" />
                     <img class="thumbnail" src="/Public-tours/package-tourB-public/images/package-tourB7.jpg"
                         alt="toura7" />
                     <img class="thumbnail" src="/Private-tours/private-inlandtour/images/wine-sunset.jpg"
@@ -164,7 +159,7 @@
                             <div class="calendar-numbers-grid" id="days-container"></div>
                             <input type="hidden" id="selected-date" name="booking-date" required>
                         </div>
-                        <div class="booking-note">
+                        <div class="booking-note" id="total-price">
                             Date is required - please choose one above
                         </div>
                         <button type="button" class="btn-booking">BOOK NOW</button>
@@ -474,7 +469,7 @@
         </button>
     </div>
 
-    <script src="/Public-tours/Inland-tour-public/public-Inland-tour-public-booking.js"defer></script>
+    <script src="/Public-tours/Inland-tour-public/public-Inland-tour-public-booking.js" defer></script>
     <script src="/Public-tours/Inland-tour-public/public-Inland-tour-public-imageslider.js" defer></script>
     <script src="/nav-bar/nav-bar.js" defer></script>
     <script src="/cart/badge.js"></script>

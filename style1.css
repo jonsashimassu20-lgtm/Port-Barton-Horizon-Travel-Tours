@@ -55,12 +55,12 @@ header {
 }
 
 .branding img {
-    width: 70px;
+    width: 100px;
     height: auto;
 }
 
 .branding p {
-    color: #4B5B30;
+    color: #009697;
     font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
@@ -334,7 +334,7 @@ header {
     display: block;
     width: 22px;
     height: 2px;
-    background-color: #4B5B30;
+    background-color: #009697;
     border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform-origin: center;
@@ -496,7 +496,7 @@ header {
     }
 
     .branding p {
-        font-size: 13px;
+        font-size: 14px;
     }
 }
 
@@ -509,11 +509,11 @@ header {
     }
 
     .branding img {
-        width: 50px;
+        width: 100px;
     }
 
     .branding p {
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .cart-icon {
