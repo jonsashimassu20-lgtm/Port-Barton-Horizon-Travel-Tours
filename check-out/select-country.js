@@ -79,18 +79,19 @@ function renderCountryList(countries) {
 // Kapag pumili ng country — i-update ang display at i-load states
 // ============================================================
 function selectCountry(name) {
-    // I-update ang nakikitang text sa display box
     countryDisplayTxt.textContent = name;
     countryDisplayTxt.style.color = '#111';
 
-    // I-save sa hidden input para makuha ng form
     countryInput.value = name;
 
-    // Isara ang dropdown
-    countryWrapper.classList.remove('open');
-    countrySearch.value = ''; // i-clear ang search
+    // ✅ idagdag ito — i-clear ang error agad pag may napili na
+    countrySelectErrorMsg.classList.remove('show');
+    countryLabel.classList.remove('error-text');
+    countryNameInput.classList.remove('error-input'); // ito display wrapper or search input mo, depende saan mo nilagay error styling
 
-    // I-load ang states ng napiling country
+    countryWrapper.classList.remove('open');
+    countrySearch.value = '';
+
     loadStates(name);
 }
 

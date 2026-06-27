@@ -65,7 +65,7 @@ savedCart.forEach(tour => {
     itemRow.style.justifyContent = 'space-between';
 
     itemRow.innerHTML = `
-        <div class="product-name" style="flex: 3; display: flex; align-items: center; gap: 5px; font-size: 14px;  color: #555; padding-top: 15px; border-bottom: 0.5px solid #e5e7eb; padding-bottom: 15px;">
+        <div class="product-name" style="flex: 3; display: flex; align-items: center; gap: 5px; font-size: 11px;  color: #555; padding-top: 15px; border-bottom: 0.5px solid #e5e7eb; padding-bottom: 15px;">
             <img src="${tour.image || tour.Image || '/image_slider/tourA2.png'}" 
                  style="width: 50px; height: 50px; border-radius: 6px; object-fit: ${imageFit};" 
                  alt="Product Image">

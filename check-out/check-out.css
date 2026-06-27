@@ -351,11 +351,11 @@ header {
 
     .dropdown-menu li a img {
         width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    object-fit: contain;
-    /* Itago ang broken image icon */
-    overflow: hidden;
+        height: 20px;
+        flex-shrink: 0;
+        object-fit: contain;
+        /* Itago ang broken image icon */
+        overflow: hidden;
     }
 
     .fa-chevron-down {
@@ -426,6 +426,7 @@ header {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
+
 .form-title {
     font-size: 16px;
     font-weight: 600;
@@ -439,19 +440,23 @@ header {
     display: flex;
     gap: 16px;
     margin-bottom: 16px;
-    
+
 }
+
 .input-group {
     display: flex;
-    flex-direction: column;  /* label stacks above input */
+    flex-direction: column;
+    /* label stacks above input */
     flex: 1;
     gap: 6px;
 }
+
 .input-group label {
     font-size: 13px;
     font-weight: 500;
     color: #111;
 }
+
 .input-group input,
 .input-group datalist {
     height: 38px;
@@ -462,12 +467,16 @@ header {
     width: 100%;
     box-sizing: border-box;
 }
+
 .input-group input:focus,
 .input-group select:focus {
-    outline: none;                          /* tanggalin yung default */
-    border-color: #9ca3af;                  /* kulay ng border pag focused (Cool Gray) */
+    outline: none;
+    /* tanggalin yung default */
+    border-color: #9ca3af;
+    /* kulay ng border pag focused (Cool Gray) */
     box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.15);
 }
+
 /* Para mag-match ang height ng input at select */
 .input-group select {
     height: 38px;
@@ -487,10 +496,19 @@ header {
     border-color: #9ca3af;
     box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.15);
 }
+
 /* for the 3-column row */
-.input-group.city   { flex: 2; }
-.input-group.state  { flex: 2; }
-.input-group.zip    { flex: 1.2; }
+.input-group.city {
+    flex: 2;
+}
+
+.input-group.state {
+    flex: 2;
+}
+
+.input-group.zip {
+    flex: 1.2;
+}
 
 /* ── Wrapper — relative para malagyan ng absolute yung dropdown ── */
 .custom-select-wrapper {
@@ -523,7 +541,8 @@ header {
 .custom-select-wrapper.open .custom-select-display {
     border-color: #9ca3af;
     box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.15);
-    border-radius: 6px 6px 0 0; /* flat bottom kapag bukas */
+    border-radius: 6px 6px 0 0;
+    /* flat bottom kapag bukas */
 }
 
 /* ── Rotate ang chevron kapag bukas ── */
@@ -540,14 +559,17 @@ header {
 
 /* ── Dropdown container — nakalagay sa BABA ng display ── */
 .custom-select-dropdown {
-    display: none; /* nakatago by default */
+    display: none;
+    /* nakatago by default */
     position: absolute;
-    top: 100%;     /* exactly sa baba ng display */
+    top: 100%;
+    /* exactly sa baba ng display */
     left: 0;
     right: 0;
     background: #fff;
     border: 1px solid #9ca3af;
-    border-top: none; /* para seamless na kadugtong ng display */
+    border-top: none;
+    /* para seamless na kadugtong ng display */
     border-radius: 0 0 6px 6px;
     z-index: 999;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -574,7 +596,8 @@ header {
     list-style: none;
     margin: 0;
     padding: 0;
-    max-height: 220px; /* scroll kapag marami */
+    max-height: 220px;
+    /* scroll kapag marami */
     overflow-y: auto;
 }
 
@@ -599,7 +622,7 @@ header {
 
 /*-----------------------------------------additional information ----------------*/
 #additional-section {
-   margin-top:  -40px;
+    margin-top: -40px;
 }
 
 .add-info-wrapper {
@@ -614,12 +637,15 @@ header {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     flex: 2;
-    
+
 }
+
 .message-container {
     display: flex;
-    flex-direction: column;  /* label stacks above input */
+    flex-direction: column;
+    /* label stacks above input */
 }
+
 .additional-title {
     font-size: 16px;
     font-weight: 600;
@@ -628,27 +654,58 @@ header {
     border-bottom: 0.5px solid #e5e7eb;
     margin-bottom: 20px;
 }
+
 .message-container label {
     font-size: 13px;
     font-weight: 500;
     color: #11111195;
 }
+
 #add-message {
-    width: 100%; 
-    min-height: 120px; 
+    width: 100%;
+    min-height: 120px;
     padding: 12px 15px;
-    margin-top: 10px; 
+    margin-top: 10px;
     border: 1px solid #d1d5db;
     border-radius: 8px;
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
-    box-sizing: border-box; 
-    resize: vertical; 
+    box-sizing: border-box;
+    resize: vertical;
 }
+
 #add-message:focus {
-    outline: none;                          /* tanggalin yung default */
-    border-color: #9ca3af;                  /* kulay ng border pag focused (Cool Gray) */
+    outline: none;
+    /* tanggalin yung default */
+    border-color: #9ca3af;
+    /* kulay ng border pag focused (Cool Gray) */
     box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.15);
+}
+
+.error-text {
+    color: red !important;
+}
+
+.error-input {
+    border: 1px solid red !important;
+    outline: none !important;
+}
+
+.label-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+.error-message {
+    display: none;
+    color: red;
+    font-size: 10px;
+}
+
+.error-message.show {
+    display: block;
 }
 
 /*---------------------------------------------------------left column------------*/
@@ -667,12 +724,14 @@ header {
     box-sizing: border-box;
     padding-bottom: 15px;
 }
+
 .product-name {
     flex: 3;
     font-weight: 500;
     color: #111111;
-    
+
 }
+
 .sub-total {
     flex: 1;
     font-weight: 500;
@@ -682,6 +741,7 @@ header {
     align-items: center;
     justify-content: flex-end;
 }
+
 /* I-dagdag/i-update ang mga rules na ito sa checkout.css mo */
 
 .subtotal-title,
@@ -710,22 +770,32 @@ header {
 .total-title p:last-child {
     font-weight: 700;
 }
+
 /* Para magkapatong at may espasyo sa gitna */
 .payment-method-box {
-    background-color: #ffffff; /* Puting background para lumitaw */
-    border: 1px solid #e5e7eb; /* Manipis at malinis na gray border */
-    border-radius: 8px; /* Medyo rounded ang kanto (optional) */
-    padding: 30px; /* Espasyo sa loob para hindi dikit ang text sa border */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Optional: Maliit na shadow para magmukhang umaangat */
+    background-color: #ffffff;
+    /* Puting background para lumitaw */
+    border: 1px solid #e5e7eb;
+    /* Manipis at malinis na gray border */
+    border-radius: 8px;
+    /* Medyo rounded ang kanto (optional) */
+    padding: 30px;
+    /* Espasyo sa loob para hindi dikit ang text sa border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    /* Optional: Maliit na shadow para magmukhang umaangat */
 }
+
 .payment-method-container form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espasyo sa pagitan ng mga kahon */
+    gap: 15px;
+    /* Espasyo sa pagitan ng mga kahon */
 }
+
 .payment-option {
     padding-bottom: 20px;
 }
+
 .payment-option p {
     margin-top: 10px;
     margin-bottom: 0;
@@ -733,20 +803,25 @@ header {
     color: #64748b;
     line-height: 1.5;
 }
+
 .payment-title p {
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #e5e7eb; /* Guhit sa ilalim ng title */
+    border-bottom: 1px solid #e5e7eb;
+    /* Guhit sa ilalim ng title */
 }
+
 .agreement-section {
     margin-top: 10px;
 }
+
 .agreement-section label {
     font-size: 13px;
     font-weight: 300;
 }
+
 .payment-option a,
 .agreement-section a {
     text-decoration: none;
@@ -754,11 +829,13 @@ header {
     font-weight: 500;
     color: #4B5B30;
 }
+
 .payment-option a:hover,
 .agreement-section a:hover {
     color: #431e72;
     text-decoration: underline;
 }
+
 #debit-credit-info,
 #bank-transfer-info,
 #paypal-info {
@@ -767,27 +844,34 @@ header {
     overflow: hidden;
     margin: 0;
     transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
-}  
+}
+
 #direct-transfer-input,
 #debit-credit-cards,
 #paypal-payment {
     cursor: pointer;
-} 
-#debit-credit-info.show,
-#bank-transfer-info.show, 
-#paypal-info.show {
-    max-height: 200px; /* I-set lang sa number na kasya yung text mo */
-    opacity: 1;
-    margin-top: 10px; /* Ibinabalik yung espasyo sa taas */
 }
+
+#debit-credit-info.show,
+#bank-transfer-info.show,
+#paypal-info.show {
+    max-height: 200px;
+    /* I-set lang sa number na kasya yung text mo */
+    opacity: 1;
+    margin-top: 10px;
+    /* Ibinabalik yung espasyo sa taas */
+}
+
 .payment-option-header {
     display: flex;
     align-items: center;
     gap: 10px;
 }
+
 .payment-option-header input[type='radio'] {
     margin: 0;
 }
+
 .paypal-logo {
     width: 120px;
     height: auto;
@@ -801,12 +885,14 @@ header {
     flex-direction: column;
     gap: 20px;
 }
+
 .sbmit-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 15px;
 }
+
 .place-order {
     width: 100%;
     padding: 12px;
@@ -819,6 +905,7 @@ header {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .place-order:hover {
     background-color: #4B5B30;
 }
