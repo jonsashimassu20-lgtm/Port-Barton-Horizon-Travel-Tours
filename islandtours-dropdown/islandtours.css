@@ -737,6 +737,121 @@ header {
 }
 
 
+/* =====================================================
+   MEDIA QUERIES — MOBILE ONLY
+   ===================================================== */
+
+/* ── TABLET (≤991px) ── */
+@media (max-width: 991px) {
+
+    #image-divider {
+        height: auto;
+        min-height: 300px;
+        padding: 50px 0;
+    }
+
+    .image-content h2 {
+        font-size: 2.1rem;
+    }
+
+    .right-text-content h3 {
+        font-size: 22px;
+    }
+
+    .right-text-content a {
+        width: 60%;
+        padding: 15px;
+    }
+}
+
+/* ── MOBILE (≤768px) ── */
+@media (max-width: 768px) {
+
+    /* Image divider */
+    #image-divider {
+        height: auto;
+        min-height: 300px;
+        padding: 50px 0;
+    }
+
+    .image-content h2 {
+        font-size: 1.7rem;
+        padding-bottom: 14px;
+    }
+
+    .image-content p {
+        font-size: 14px;
+    }
+
+    /* Right-left divider — stack vertically */
+    .right-let-wrapper {
+        flex-direction: column;
+    }
+
+    .right-text-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .right-text-content h2 {
+        font-size: 18px;
+    }
+
+    .right-text-content h3 {
+        font-size: 20px;
+    }
+
+    .right-text-content p {
+        font-size: 13px;
+    }
+
+    .right-text-content a {
+        width: 70%;
+        font-size: 16px;
+        padding: 12px 0;
+    }
+}
+
+/* ── SMALL MOBILE (≤480px) ── */
+@media (max-width: 480px) {
+
+    /* Image divider */
+    #image-divider {
+        height: 180px;
+    }
+
+    .image-content h2 {
+        font-size: 1.4rem;
+        padding-bottom: 10px;
+    }
+
+    .image-content p {
+        font-size: 13px;
+    }
+
+    /* Right-left divider */
+    .right-text-content {
+        width: 100%;
+    }
+
+    .right-text-content h2 {
+        font-size: 16px;
+    }
+
+    .right-text-content h3 {
+        font-size: 18px;
+    }
+
+    .right-text-content p {
+        font-size: 12px;
+    }
+
+    .right-text-content a {
+        width: 100%;
+        font-size: 14px;
+        padding: 12px 0;
+    }
+}
 #most-visit {
     width: 100%;
     background-color: #f9f9f9;
