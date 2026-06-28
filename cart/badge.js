@@ -18,7 +18,7 @@ function updateCartBadge() {
         if(totalItems === 0) {
             badge.style.display = 'none';
         } else {
-            badge.style.display = 'absolute';
+            badge.style.display = 'flex';
             badge.innerHTML = totalItems;
         };
     }
