@@ -17,15 +17,21 @@
     <header>
         <div class="header-container">
             <div class="branding">
-                <a href="/index.html"><img src="/nav-bar/logo.png" alt="logo" /></a>
+                <a href="/index.html"><img src="/assets islands/logo2.png" alt="logo" /></a>
                 <p>Port Barton Horizon</p>
             </div>
 
             <nav class="nav-bar" id="nav-bar">
                 <ul class="nav-links">
                     <li><a href="/index.html">Home</a></li>
+
                     <li class="dropdown">
-                        <a href="/service page/sevice-page.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <a href="/service page/sevice-page.html">Services</a>
+
+                        <span class="chevron-trigger">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+
                         <ul class="dropdown-menu">
                             <li><a href="/islandtours-dropdown/islandtours.html"><img src="/nav-bar/islandhoping.png"
                                         alt="islandhoping" />Island Tours</a></li>
@@ -52,7 +58,7 @@
                 </button>
                 <div class="header-actions">
                     <a href="/cart/cart.html" class="cart-icon-container">
-                        <img src="/nav-bar/cart-alt.png" alt="cart" class="cart-icon">
+                        <img src="/assets icons services/cart-alt.png" alt="cart" class="cart-icon">
                         <span class="cart-badge" id="cart-badge">0</span>
                     </a>
                 </div>
@@ -141,7 +147,8 @@
                         <div class="input-group state">
                             <div class="label-wrapper">
                                 <label for="state-county" id="state-label">State / County *</label>
-                                <span id="selectcounty-error-msg" class="error-message">Please Select Country first</span>
+                                <span id="selectcounty-error-msg" class="error-message">Please Select Country
+                                    first</span>
                             </div>
                             <!-- Ito ay normal na select, mapupuno ng JS -->
                             <select id="state-county" name="state-county">
@@ -150,13 +157,20 @@
                         </div>
 
                         <div class="input-group zip">
-                            <label for="zip" id="postalcode-label">Postcode / ZIP *</label>
-                            <input type="text" id="zip" name="zip">
+                            <div class="label-wrapper">
+                                <label for="zip" id="postalcode-label">Postcode / ZIP *</label>
+                                <span id="postalcode-error-msg" class="error-message">Please enter your postal or ZIP
+                                    code.</span>
+                            </div>
+                            <input type="text" id="zip" name="zip" minlength="5" maxlength="10">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="input-group">
-                            <label for="Email" id="email-label">Email Address*</label>
+                            <div class="label-wrapper">
+                                <label for="Email" id="email-label">Email Address*</label>
+                                <span id="email-error-msg" class="error-message">Please Enter Valid Email</span>
+                            </div>
                             <input type="email" id="Email" name="email">
                         </div>
                         <div class="input-group">
@@ -168,6 +182,12 @@
                         <div class="input-group">
                             <label for="location" id="location-label">Pick up Location*</label>
                             <input type="text" id="location" name="location">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="location" id="contacts">WhatsApp / Viber / Telegram / Phone*</label>
+                            <input type="text" id="contacts" name="location">
                         </div>
                     </div>
                     <div class="add-info-wrapper">
@@ -218,7 +238,7 @@
                             <div class="payment-option">
                                 <input type="radio" id="direct-transfer-input" name="payment-method"
                                     value="bank_transfer" checked>
-                                <label for="direct-transfer-input">Pay via Bank Transfer (Direct Transfer)</label>
+                                <label for="direct-transfer-input" class="pointer">Pay via Bank Transfer (Direct Transfer)</label>
                                 <p id="bank-transfer-info" class="show">Make your payment directly into our bank
                                     account. Please use your Order ID as the
                                     payment
@@ -228,14 +248,14 @@
                             <div class="payment-option">
                                 <input type="radio" id="debit-credit-cards" name="payment-method"
                                     value="debitCreditCards">
-                                <label for="debit-credit-card-inputs">Debit & Credit Cards</label>
+                                <label for="debit-credit-cards" class="pointer" >Debit & Credit Cards</label>
                                 <p id="debit-credit-info">Use your credit card to pay securely through
                                     PayMaya. Fast and easy checkout.</p>
                             </div>
                             <div class="payment-option">
                                 <div class="payment-option-header">
                                     <input type="radio" id="paypal-payment" name="payment-method" value="paypal">
-                                    <label for="paypal-payment">Paypal</label>
+                                    <label for="paypal-payment" class="pointer">Paypal</label>
                                     <img src="/assets icons services/paypal-logo.png" class="paypal-logo" />
                                 </div>
                                 <p id="paypal-info">Your personal data will be used to process your order, support your

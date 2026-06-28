@@ -28,6 +28,8 @@ const countrySelectErrorMsg = document.getElementById('selectcountry-error-msg')
 const addressErrorMsg = document.getElementById('street-error-msg');
 const townErrorMsg = document.getElementById('town-error-msg');
 const selectCountyErrorMsg = document.getElementById('selectcounty-error-msg');
+const postalCodeErrorMsg = document.getElementById('postalcode-error-msg');
+const emailErrorMsg = document.getElementById('email-error-msg');
 
 const placeOrderValidation = document.getElementById('place-order-btn');
 
@@ -38,10 +40,15 @@ placeOrderValidation.addEventListener('click', function (event) {
     const nameRegex = /^[a-zA-ZñÑ\s]+$/;
     const fNameVal = fnameInput.value.trim();
     const lNameVal = lnameInput.value.trim();
+
     const countrySelectVal = countrySelectHidden.value;
     const addressVal = streetInput.value.trim();
     const townVal = townInput.value.trim();
     const selectCountyVal = selectCountyInput.value;
+    const postalCodeVal = postalCodeInput.value.trim();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailVal = emailInput.value.trim();
 
     if (fNameVal === "") {
 
@@ -148,7 +155,7 @@ placeOrderValidation.addEventListener('click', function (event) {
 
     //============================================================select county val
 
-    if(selectCountyVal === "") {
+    if (selectCountyVal === "") {
 
         selectCountyErrorMsg.classList.add('show');
         stateLabel.classList.add('error-text');
@@ -160,6 +167,42 @@ placeOrderValidation.addEventListener('click', function (event) {
         stateLabel.classList.remove('error-text');
         selectCountyInput.classList.remove('error-input');
     }
+
+    //==============================================================postalcode
+
+    if (postalCodeVal === "") {
+
+        postalCodeErrorMsg.classList.add('show');
+        postalCodeLabel.classList.add('error-text');
+        postalCodeInput.classList.add('error-input');
+
+    } else if (postalCodeVal.length < 4) {
+
+        postalCodeErrorMsg.classList.add('show');
+        postalCodeLabel.classList.add('error-text');
+        postalCodeInput.classList.add('error-input');
+
+    } else {
+        postalCodeErrorMsg.classList.remove('show');
+        postalCodeLabel.classList.remove('error-text');
+        postalCodeInput.classList.remove('error-input');
+    }
+    //=======================================================email======
+
+    if (emailVal === "" || !emailRegex.test(emailVal)) {
+
+        emailErrorMsg.classList.add('show');
+        emailLabel.classList.add('error-text');
+        emailInput.classList.add('error-input');
+
+    } else {
+
+        emailErrorMsg.classList.remove('show');
+        emailLabel.classList.remove('error-text');
+        emailInput.classList.remove('error-input');
+
+    }
+
 
 });
 
@@ -213,12 +256,45 @@ townInput.addEventListener('input', function () {
 
 selectCountyInput.addEventListener('input', function () {
 
-
-    if(countrySelectHidden !== "") {
+    if (countrySelectHidden !== "") {
 
         selectCountyErrorMsg.classList.remove('show');
         stateLabel.classList.remove('error-text');
         selectCountyInput.classList.remove('error-input');
+    }
+
+});
+
+postalCodeInput.addEventListener('input', function () {
+
+    const postalCodeVal = postalCodeInput.value.trim();
+
+    if (postalCodeVal === "" || postalCodeVal.length >= 4) {
+
+        postalCodeErrorMsg.classList.remove('show');
+        postalCodeLabel.classList.remove('error-text');
+        postalCodeInput.classList.remove('error-input');
+    }
+
+});
+
+emailInput.addEventListener('input', function () {
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailVal = emailInput.value.trim();
+
+    if (emailVal === "" || !emailRegex.test(emailVal)) {
+
+        emailErrorMsg.classList.add('show');
+        emailLabel.classList.add('error-text');
+        emailInput.classList.add('error-input');
+
+    } else {
+
+        emailErrorMsg.classList.remove('show');
+        emailLabel.classList.remove('error-text');
+        emailInput.classList.remove('error-input');
+
     }
 
 });
