@@ -25,6 +25,9 @@ const locationLabel = document.getElementById('location-label');
 const fNameErrorMsg = document.getElementById('fname-error-msg');
 const lNameErrorMsg = document.getElementById('lname-error-msg');
 const countrySelectErrorMsg = document.getElementById('selectcountry-error-msg');
+const addressErrorMsg = document.getElementById('street-error-msg');
+const townErrorMsg = document.getElementById('town-error-msg');
+const selectCountyErrorMsg = document.getElementById('selectcounty-error-msg');
 
 const placeOrderValidation = document.getElementById('place-order-btn');
 
@@ -36,6 +39,9 @@ placeOrderValidation.addEventListener('click', function (event) {
     const fNameVal = fnameInput.value.trim();
     const lNameVal = lnameInput.value.trim();
     const countrySelectVal = countrySelectHidden.value;
+    const addressVal = streetInput.value.trim();
+    const townVal = townInput.value.trim();
+    const selectCountyVal = selectCountyInput.value;
 
     if (fNameVal === "") {
 
@@ -94,8 +100,67 @@ placeOrderValidation.addEventListener('click', function (event) {
     } else {
         countrySelectErrorMsg.classList.remove('show');
         countryLabel.classList.remove('error-text');
-        countryNameInput.classList.remove('error-input');
+        countrySelectHidden.classList.remove('error-input');
     }
+
+    //===============================================address
+
+
+    if (addressVal === "") {
+
+        addressErrorMsg.classList.add('show');
+        streetLabel.classList.add('error-text');
+        streetInput.classList.add('error-input');
+
+    } else if (addressVal.length < 5) {
+
+        addressErrorMsg.classList.add('show');
+        streetLabel.classList.add('error-text');
+        streetInput.classList.add('error-input');
+
+    } else {
+
+        addressErrorMsg.classList.remove('show');
+        streetLabel.classList.remove('error-text');
+        streetInput.classList.remove('error-input');
+    }
+
+    //============================================================town/city==========
+
+    if (townVal === "") {
+
+        townErrorMsg.classList.add('show');
+        townLabel.classList.add('error-text');
+        townInput.classList.add('error-input');
+
+    } else if (townVal.length < 5) {
+
+        townErrorMsg.classList.add('show');
+        townLabel.classList.add('error-text');
+        townInput.classList.add('error-input');
+
+    } else {
+
+        townErrorMsg.classList.remove('show');
+        townLabel.classList.remove('error-text');
+        townInput.classList.remove('error-input');
+    }
+
+    //============================================================select county val
+
+    if(selectCountyVal === "") {
+
+        selectCountyErrorMsg.classList.add('show');
+        stateLabel.classList.add('error-text');
+        selectCountyInput.classList.add('error-input');
+
+    } else {
+
+        selectCountyErrorMsg.classList.remove('show');
+        stateLabel.classList.remove('error-text');
+        selectCountyInput.classList.remove('error-input');
+    }
+
 });
 
 
@@ -120,5 +185,41 @@ lnameInput.addEventListener('input', function () {
         lnameLabel.classList.remove('error-text');
         lnameInput.classList.remove('error-input');
     }
+});
+
+streetInput.addEventListener('input', function () {
+
+    const addressVal = streetInput.value.trim();
+
+    if (addressVal === "" || addressVal.length >= 5) {
+
+        addressErrorMsg.classList.remove('show');
+        streetLabel.classList.remove('error-text');
+        streetInput.classList.remove('error-input');
+    }
+});
+
+townInput.addEventListener('input', function () {
+
+    const townVal = townInput.value.trim();
+
+    if (townVal === "" || townVal.length >= 5) {
+
+        townErrorMsg.classList.remove('show');
+        townLabel.classList.remove('error-text');
+        townInput.classList.remove('error-input');
+    }
+});
+
+selectCountyInput.addEventListener('input', function () {
+
+
+    if(countrySelectHidden !== "") {
+
+        selectCountyErrorMsg.classList.remove('show');
+        stateLabel.classList.remove('error-text');
+        selectCountyInput.classList.remove('error-input');
+    }
+
 });
 

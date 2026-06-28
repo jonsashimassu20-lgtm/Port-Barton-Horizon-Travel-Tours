@@ -120,19 +120,29 @@
                     </div>
                     <div class="form-row">
                         <div class="input-group">
-                            <label for="street" id="street-label">Street Address*</label>
+                            <div class="label-wrapper">
+                                <label for="street" id="street-label">Street Address*</label>
+                                <span id="street-error-msg" class="error-message">Please enter your valid
+                                    address.</span>
+                            </div>
                             <input type="text" id="street" name="street" placeholder="House number and street name">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="input-group city">
-                            <label for="town" id="town-label">Town / City *</label>
+                            <div class="label-wrapper">
+                                <label for="town" id="town-label">Town / City *</label>
+                                <span id="town-error-msg" class="error-message">Please enter your correct town</span>
+                            </div>
                             <input type="text" id="town" name="town">
                         </div>
 
                         <div class="input-group state">
-                            <label for="state-county" id="state-label">State / County *</label>
+                            <div class="label-wrapper">
+                                <label for="state-county" id="state-label">State / County *</label>
+                                <span id="selectcounty-error-msg" class="error-message">Please Select Country first</span>
+                            </div>
                             <!-- Ito ay normal na select, mapupuno ng JS -->
                             <select id="state-county" name="state-county">
                                 <option value="" disabled selected></option>
