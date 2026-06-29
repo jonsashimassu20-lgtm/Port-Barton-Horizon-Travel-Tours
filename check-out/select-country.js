@@ -87,7 +87,7 @@ function selectCountry(name) {
     // ✅ idagdag ito — i-clear ang error agad pag may napili na
     countrySelectErrorMsg.classList.remove('show');
     countryLabel.classList.remove('error-text');
-    countryNameInput.classList.remove('error-input'); // ito display wrapper or search input mo, depende saan mo nilagay error styling
+    selectDisplayErrorMsg.classList.remove('error-input'); // ito display wrapper or search input mo, depende saan mo nilagay error styling
 
     countryWrapper.classList.remove('open');
     countrySearch.value = '';
@@ -99,13 +99,12 @@ function selectCountry(name) {
 // I-populate ang State dropdown base sa napiling country
 // ============================================================
 function loadStates(countryName) {
-    // I-reset muna ang state dropdown
     stateSelect.innerHTML = '<option value="" disabled selected>Select state...</option>';
 
     const states = countryData[countryName];
 
     if (states && states.length > 0) {
-        // May states — i-loop at i-add sa dropdown
+        stateSelect.disabled = false;
         states.forEach(function (stateName) {
             const option = document.createElement('option');
             option.value = stateName;
@@ -113,12 +112,14 @@ function loadStates(countryName) {
             stateSelect.appendChild(option);
         });
     } else {
-        // Walang states ang napiling country
+        // ✅ gamitin natin "N/A" bilang valid value, hindi empty string
+        stateSelect.innerHTML = ''; // i-clear muna, wag na gamitin yung "Select state..." placeholder
         const option = document.createElement('option');
-        option.value = '';
+        option.value = 'N/A';
         option.textContent = 'No states available';
-        option.disabled = true;
+        option.selected = true; // ✅ awtomatikong naselect
         stateSelect.appendChild(option);
+        stateSelect.disabled = true; // optional: i-disable buong select kasi wala namang choice
     }
 }
 

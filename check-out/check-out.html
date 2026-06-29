@@ -174,20 +174,19 @@
                             <input type="email" id="Email" name="email">
                         </div>
                         <div class="input-group">
-                            <label for="phone" id="phone-label">Phone*</label>
+                            <label for="phone" id="phone-label"> WhatsApp / Viber / Telegram / Phone*</label>
+                            <span id="phone-error-msg" class="error-message">Please Enter Valid Contact details</span>
+
                             <input type="tel" id="phone" name="phonenumber">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="input-group">
-                            <label for="location" id="location-label">Pick up Location*</label>
+                            <div class="label-wrapper">
+                                <label for="location" id="location-label">Pick up Location*</label>
+                                <span id="pickup-error-msg" class="error-message">Please Enter Valid Location</span>
+                            </div>
                             <input type="text" id="location" name="location">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label for="location" id="contacts">WhatsApp / Viber / Telegram / Phone*</label>
-                            <input type="text" id="contacts" name="location">
                         </div>
                     </div>
                     <div class="add-info-wrapper">
@@ -238,7 +237,8 @@
                             <div class="payment-option">
                                 <input type="radio" id="direct-transfer-input" name="payment-method"
                                     value="bank_transfer" checked>
-                                <label for="direct-transfer-input" class="pointer">Pay via Bank Transfer (Direct Transfer)</label>
+                                <label for="direct-transfer-input" class="pointer">Pay via Bank Transfer (Direct
+                                    Transfer)</label>
                                 <p id="bank-transfer-info" class="show">Make your payment directly into our bank
                                     account. Please use your Order ID as the
                                     payment
@@ -248,7 +248,7 @@
                             <div class="payment-option">
                                 <input type="radio" id="debit-credit-cards" name="payment-method"
                                     value="debitCreditCards">
-                                <label for="debit-credit-cards" class="pointer" >Debit & Credit Cards</label>
+                                <label for="debit-credit-cards" class="pointer">Debit & Credit Cards</label>
                                 <p id="debit-credit-info">Use your credit card to pay securely through
                                     PayMaya. Fast and easy checkout.</p>
                             </div>

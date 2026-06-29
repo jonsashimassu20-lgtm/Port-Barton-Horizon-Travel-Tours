@@ -30,6 +30,9 @@ const townErrorMsg = document.getElementById('town-error-msg');
 const selectCountyErrorMsg = document.getElementById('selectcounty-error-msg');
 const postalCodeErrorMsg = document.getElementById('postalcode-error-msg');
 const emailErrorMsg = document.getElementById('email-error-msg');
+const phoneErrorMsg = document.getElementById('phone-error-msg');
+const pickupErrorMsg = document.getElementById('pickup-error-msg');
+const selectDisplayErrorMsg = document.getElementById('country-display');
 
 const placeOrderValidation = document.getElementById('place-order-btn');
 
@@ -49,6 +52,9 @@ placeOrderValidation.addEventListener('click', function (event) {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const emailVal = emailInput.value.trim();
+
+    const phoneVal = phoneInput.value.trim();
+    const pickupVal = locationInput.value.trim();
 
     if (fNameVal === "") {
 
@@ -102,12 +108,12 @@ placeOrderValidation.addEventListener('click', function (event) {
 
         countrySelectErrorMsg.classList.add('show');
         countryLabel.classList.add('error-text');
-        countryNameInput.classList.add('error-input');
+        selectDisplayErrorMsg.classList.add('error-input');
 
     } else {
         countrySelectErrorMsg.classList.remove('show');
         countryLabel.classList.remove('error-text');
-        countrySelectHidden.classList.remove('error-input');
+        selectDisplayErrorMsg.classList.remove('error-input');
     }
 
     //===============================================address
@@ -202,7 +208,34 @@ placeOrderValidation.addEventListener('click', function (event) {
         emailInput.classList.remove('error-input');
 
     }
+    //====================================================phone contacts=======//
 
+    if (phoneVal === "" || phoneVal.length < 5) {
+
+        phoneErrorMsg.classList.add('show');
+        phoneLabel.classList.add('error-text');
+        phoneInput.classList.add('error-input');
+
+    } else {
+
+        phoneErrorMsg.classList.remove('show');
+        phoneLabel.classList.remove('error-text');
+        phoneInput.classList.remove('error-input');
+    }
+
+    //=======================================================pick up location
+
+    if (pickupVal === "" || pickupVal.length < 5) {
+
+        pickupErrorMsg.classList.add('show');
+        locationLabel.classList.add('error-text');
+        locationInput.classList.add('error-input');
+
+    } else {
+        pickupErrorMsg.classList.remove('show');
+        locationLabel.classList.remove('error-text');
+        locationInput.classList.remove('error-input');
+    }
 
 });
 
@@ -295,6 +328,44 @@ emailInput.addEventListener('input', function () {
         emailLabel.classList.remove('error-text');
         emailInput.classList.remove('error-input');
 
+    }
+
+});
+
+phoneInput.addEventListener('input', function () {
+
+    const phoneVal = phoneInput.value.trim();
+
+    if (phoneVal === "" || phoneVal.length < 5) {
+
+        phoneErrorMsg.classList.add('show');
+        phoneLabel.classList.add('error-text');
+        phoneInput.classList.add('error-input');
+
+    } else {
+
+        phoneErrorMsg.classList.remove('show');
+        phoneLabel.classList.remove('error-text');
+        phoneInput.classList.remove('error-input');
+    }
+
+});
+
+locationInput.addEventListener('input', function () {
+
+    const pickupVal = locationInput.value.trim();
+
+    if (pickupVal === "" || pickupVal.length < 5) {
+
+        pickupErrorMsg.classList.add('show');
+        locationLabel.classList.add('error-text');
+        locationInput.classList.add('error-input');
+
+    } else {
+
+        pickupErrorMsg.classList.remove('show');
+        locationLabel.classList.remove('error-text');
+        locationInput.classList.remove('error-input');
     }
 
 });
