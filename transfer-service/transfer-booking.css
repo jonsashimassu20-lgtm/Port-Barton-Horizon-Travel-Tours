@@ -10,12 +10,18 @@
 body {
     overflow-x: hidden;
     width: 100%;
+    background-color: #f9f9f9;
 }
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
 }
 
+/* ============================================
+   HEADER (same as existing pages)
+   ============================================ */
 header {
     background-color: #ffffff;
     width: 100%;
@@ -49,12 +55,12 @@ header {
 }
 
 .branding img {
-    width: 70px;
+    width: 100px;
     height: auto;
 }
 
 .branding p {
-    color: #4B5B30;
+    color: #009697;
     font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
@@ -72,6 +78,12 @@ header {
     gap: 5px;
     align-items: center;
 }
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+}
+
 .nav-links a {
     text-decoration: none;
     color: #333333;
@@ -82,44 +94,26 @@ header {
     display: flex;
     align-items: center;
     gap: 4px;
-
-    /* FIX #1 & #3: laging may 2px na border-bottom, pero TRANSPARENT
-       kapag hindi naka-hover. Ganito, laging reserved ang space para
-       sa guhit, kaya hindi gumagalaw/lumilundag ang layout pag lumitaw
-       ang totoong kulay. Pantay-pantay din lahat ng item dahil parehong
-       height (may border) sila sa lahat ng oras. */
     border-bottom: 2px solid transparent;
 }
 
 .chevron-trigger {
     transition: color 0.3s;
-    border-bottom: 2px solid transparent; /* parehong treatment para pantay */
+    border-bottom: 2px solid transparent;
 }
 
-/* FIX #1: Pinalitan ang display ng guhit gamit border-color transition
-   imbes na border-width — hindi na ito nagpapalit ng laki ng box */
 .nav-links a:hover,
 .chevron-trigger:hover {
     color: #009697;
 }
 
-/* ============================================
-   FIX #2: Chevron color syncs sa hover ng "Services"
-   Dahil sibling lang sila ng <a> at <span>, kailangan
-   nating i-target ang chevron gamit ang parent .dropdown
-   na naka-hover — hindi lang base sa sariling hover niya
-   ============================================ */
-.dropdown:hover > a,
+.dropdown:hover>a,
 .dropdown:hover .chevron-trigger,
 .dropdown:hover .chevron-trigger .fa-chevron-down,
 .dropdown:has(a:hover) .chevron-trigger {
     color: #009697;
-    
 }
 
-/* ============================================
-   Dropdown container
-   ============================================ */
 .dropdown {
     position: relative;
     display: flex;
@@ -147,9 +141,6 @@ header {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* ============================================
-   Dropdown menu base (mobile-first default)
-   ============================================ */
 .dropdown-menu {
     display: none;
     list-style: none;
@@ -159,9 +150,6 @@ header {
     border-radius: 4px;
 }
 
-/* ============================================
-   MOBILE dropdown — static/relative position
-   ============================================ */
 @media (max-width: 768px) {
     .dropdown {
         flex-wrap: wrap;
@@ -184,9 +172,6 @@ header {
     }
 }
 
-/* ============================================
-   DESKTOP hover bridge
-   ============================================ */
 @media (min-width: 769px) {
     .dropdown-menu {
         position: absolute;
@@ -201,7 +186,7 @@ header {
 
     .dropdown-menu li a {
         padding: 12px 20px;
-        border-bottom: none; /* huwag i-apply ang underline effect sa dropdown items */
+        border-bottom: none;
     }
 
     .dropdown-menu li a:hover {
@@ -218,9 +203,6 @@ header {
     }
 }
 
-/* ============================================
-   Mobile open state (JS toggle)
-   ============================================ */
 .dropdown.open .dropdown-menu {
     display: block;
 }
@@ -229,23 +211,19 @@ header {
     transform: rotate(180deg);
 }
 
-/* ============================================
-   Consistent item styling sa loob ng dropdown
-   ============================================ */
 .dropdown-menu li a {
     color: #333333;
     display: flex;
     align-items: center;
     text-decoration: none;
     transition: background 0.3s ease;
-    border-bottom: none; /* hindi kasama sa underline-on-hover effect */
+    border-bottom: none;
     width: 100%;
 }
 
 .dropdown-menu li a:hover {
     background-color: #f5f5f5;
     border-bottom: none;
-    
 }
 
 .dropdown-menu li a img {
@@ -323,7 +301,7 @@ header {
     display: block;
     width: 22px;
     height: 2px;
-    background-color: #4B5B30;
+    background-color: #009697;
     border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform-origin: center;
@@ -342,9 +320,7 @@ header {
     transform: translateY(-7px) rotate(-45deg);
 }
 
-
-/* ===================== TABLET (1024px) ===================== */
-
+/* ===================== TABLET NAV (1024px) ===================== */
 @media screen and (max-width: 1024px) {
     .branding p {
         font-size: 14px;
@@ -364,9 +340,7 @@ header {
     }
 }
 
-
-/* ===================== MOBILE (768px) ===================== */
-
+/* ===================== MOBILE NAV (768px) ===================== */
 @media screen and (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -407,11 +381,10 @@ header {
     }
 
     .nav-links a:hover {
-        background-color: rgba(75, 90, 48, 0.08);
-        color: #4B5B30;
+        background-color: rgba(0, 150, 151, 0.08);
+        color: #009697;
     }
 
-    /* Bug 2 fix: gamitin ang max-height transition para smooth — display:none ay hindi animatable */
     .dropdown-menu {
         position: static;
         box-shadow: none;
@@ -419,20 +392,16 @@ header {
         background-color: #f9f9f9;
         border-top: 1px solid #f3f4f6;
         padding: 0;
-
-        /* Smooth slide down */
         display: block;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
     }
 
-    /* Bug 2 fix: kapag .open, payagan ang max-height na lumaki */
     .dropdown.open .dropdown-menu {
         max-height: 400px;
     }
 
-    /* Bug 2 fix: tanggalin ang hover trigger sa mobile — JS na ang bahala */
     .dropdown:hover .dropdown-menu {
         max-height: 0;
     }
@@ -449,7 +418,6 @@ header {
         border-bottom: none;
     }
 
-    /* Bug 3 fix: display flex para magkadikit ang icon at text */
     .dropdown-menu li a {
         padding: 12px 20px 12px 30px;
         font-size: 14px;
@@ -461,36 +429,29 @@ header {
 
     .dropdown-menu li a img {
         width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    object-fit: contain;
-    /* Itago ang broken image icon */
-    overflow: hidden;
+        height: 20px;
+        flex-shrink: 0;
+        object-fit: contain;
+        overflow: hidden;
     }
 
     .fa-chevron-down {
         pointer-events: none;
-        /* Bug 2 fix: dagdag na transition para smooth ang pag-ikot */
         transition: transform 0.3s ease;
     }
 
-    /* Bug 1 fix: .open lang ang mag-ro-rotate, at babalik kapag nawala ang .open */
     .dropdown.open .fa-chevron-down {
         transform: rotate(180deg);
     }
 
-    /* Bug 1 fix: explicit na i-reset ang chevron kapag closed — override ng desktop hover */
     .dropdown:not(.open) .fa-chevron-down {
         transform: rotate(0deg);
     }
 
     .branding p {
-        font-size: 13px;
+        font-size: 14px;
     }
 }
-
-
-/* ===================== SMALL MOBILE (480px) ===================== */
 
 @media screen and (max-width: 480px) {
     .header-container {
@@ -498,11 +459,11 @@ header {
     }
 
     .branding img {
-        width: 50px;
+        width: 80px;
     }
 
     .branding p {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .cart-icon {
@@ -510,347 +471,444 @@ header {
         height: 26px;
     }
 }
-.container-title {
-    margin: 0 auto;
-    text-align: center;
-    font-size: 30px;
-    font-size: 400;
-    background-color: #009697;
+
+
+/* ============================================
+   HERO BANNER
+   ============================================ */
+#transfer-hero {
     width: 100%;
-    margin: 0 0 15px 0;
-    color: white;
-    padding: 12px 0;
-}
-#van-container {
-    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
 }
 
-.radio-wrapper {
+.transfer-hero-wrapper {
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+
+.transfer-hero-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(65%);
+}
+
+.transfer-hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 90%;
+}
+
+.transfer-hero-content h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 8px;
+}
+
+.transfer-hero-content p {
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    font-weight: 300;
+}
+
+
+/* ============================================
+   BOOKING SECTION (two-column layout)
+   ============================================ */
+#booking-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.booking-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* --- Left column: Route info --- */
+.route-info-col {
+    flex: 1.3;
+    min-width: 0;
+}
+
+.route-info-col h2 {
+    font-size: 1.6rem;
+    color: #2d3748;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.route-location {
+    color: #009697;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.route-details-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.route-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 14px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    flex: 1;
+    min-width: 180px;
+}
+
+.route-detail-item img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.route-detail-item .detail-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.route-detail-item .detail-label {
+    font-size: 0.75rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.route-detail-item .detail-value {
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.route-description {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 25px;
+}
+
+.route-description h3 {
+    font-size: 1.15rem;
+    color: #2d3748;
+    margin-bottom: 12px;
+}
+
+.route-description p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* --- Inclusions --- */
+.inclusions-box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.inclusions-box h3 {
+    font-size: 1.15rem;
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+
+.inclusions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.inclusions-grid h4 {
+    font-size: 0.95rem;
+    color: #009697;
+    margin-bottom: 10px;
+}
+
+.inclusion-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.inclusion-item img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+
+/* --- Right column: Booking form --- */
+.booking-form-col {
+    width: 380px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 90px;
+}
+
+.booking-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.booking-price-header {
+    background-color: #009697;
+    color: white;
+    padding: 18px 25px;
+    text-align: center;
+}
+
+.booking-price-header .price-label {
+    font-size: 0.85rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.booking-price-header .price-amount {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.booking-form-body {
+    padding: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.form-group select,
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #fafafa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group select:focus,
+.form-group input[type="number"]:focus {
+    outline: none;
+    border-color: #009697;
+    box-shadow: 0 0 0 3px rgba(0, 150, 151, 0.12);
+}
+
+/* --- Calendar --- */
+.calendar-wrapper {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    transition: border-color 0.2s;
+}
+
+.calendar-wrapper.error-border {
+    border-color: #e53e3e;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.12);
+}
+
+.calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-bottom: 20px;
+    padding: 12px 16px;
+    background-color: #009697;
+    color: white;
 }
-#select-btn {
-    height: 38px;
-    padding: 0 10px;
-    border: 1px solid #d1d5db;
+
+.cal-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 4px 10px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.cal-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.cal-btn.disabled-btn {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.current-month {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calendar-days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    padding: 8px 10px 4px;
+    background-color: #f8f9fa;
+}
+
+.calendar-days-grid div {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #999;
+    padding: 4px 0;
+}
+
+.calendar-numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    padding: 4px 10px 10px;
+    gap: 2px;
+}
+
+.calendar-numbers-grid div {
+    padding: 8px 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
     border-radius: 6px;
-    font-size: 14px;
-    width: 100%;
-    box-sizing: border-box;
-    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    color: #333;
 }
 
-#select-btn:focus {
-    outline: none;                          /* tanggalin yung default */
-    border-color: #9ca3af;                  /* kulay ng border pag focused (Cool Gray) */
-    box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.15);
-    cursor: pointer;
+.calendar-numbers-grid div:hover {
+    background-color: rgba(0, 150, 151, 0.1);
+    color: #009697;
 }
 
-.shared-transfer-wrapper,
-.private-transfer-wrapper {
-    max-width: 1350px;
+.calendar-numbers-grid div.selected-day {
+    background-color: #009697;
+    color: white;
+    font-weight: 600;
+}
+
+.calendar-numbers-grid div.inactive-day {
+    color: #ccc;
+    cursor: default;
+}
+
+.calendar-numbers-grid div.inactive-day:hover {
+    background: none;
+    color: #ccc;
+}
+
+.calendar-numbers-grid div.past-day {
+    color: #ccc;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+.calendar-numbers-grid div.past-day:hover {
+    background: none;
+    color: #ccc;
+}
+
+.calendar-numbers-grid div.next-month-day {
+    color: #bbb;
+}
+
+/* --- Price display & button --- */
+.booking-total {
+    padding: 14px 16px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+    color: #777;
+    min-height: 48px;
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-}
-.hidden {
-    display: none !important;
-}
-
-.van-transfer-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
-    background-color: #ffffff;
-    padding-bottom: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    justify-content: center;
 }
 
-.van-transfer-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+.booking-total.has-price {
+    background-color: #e6f7f7;
+    color: #009697;
+    font-weight: 600;
+    font-size: 1.05rem;
 }
 
-.transfer-thumbnails img {
-    width: 350px;
-    height: 240px;
-    object-fit: contain;
-    border-radius: 12px 12px 0 0;
-}
-
-.van-transfer-title {
-    font-size: 16px;
-    font-weight: 700;
-    width: 350px;
-}
-
-.van-transfer-title a {
-    text-decoration: none;
-    color: #4B5B30;
-}
-
-.transfer-time img,
-.transfer-availability img {
-    width: 20px;
-    height: 20px;
-}
-
-.transfer-availability,
-.transfer-time {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-    align-items: center;
-}
-
-.van-transfer-card-content {
-    margin: 20px;
-}
-
-.van-transfer-btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 20px;
-    gap: 20px;
-}
-
-.van-transfer-btn a {
+.btn-booking {
     width: 100%;
-    padding: 12px;
-    background-color: #1a2530;
+    padding: 15px;
+    background-color: #009697;
     color: white;
     border: none;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-    text-align: center;
-}
-
-.van-transfer-btn a:hover {
-    background-color: #009697;
-}
-
-.price {
+    border-radius: 8px;
+    font-size: 1rem;
     font-weight: 700;
-    font-size: 19px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-booking:hover {
+    background-color: #007a7b;
+    transform: translateY(-1px);
+}
+
+.btn-booking:active {
+    transform: translateY(0);
 }
 
 
-/* ===================== TABLET (1024px) ===================== */
-
-@media screen and (max-width: 1024px) {
-    #travel {
-        height: 420px;
-    }
-
-    .travel-image-wrapper img {
-        height: 420px;
-    }
-
-    .travel-content h2 {
-        font-size: 2rem;
-    }
-
-    .travel-content p {
-        font-size: 1.1rem;
-        margin-bottom: 40px;
-    }
-
-    .transfer-thumbnails img {
-        width: 300px;
-        height: 210px;
-    }
-
-    .van-transfer-title {
-        width: 300px;
-    }
-}
-
-
-/* ===================== MOBILE (768px) ===================== */
-
-@media screen and (max-width: 768px) {
-    #travel {
-        height: 380px;
-    }
-
-    .travel-image-wrapper img {
-        height: 380px;
-    }
-
-    .travel-content h2 {
-        font-size: 1.6rem;
-    }
-
-    .travel-content p {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        padding-bottom: 10px;
-    }
-
-    .travel-info a {
-        padding: 14px 28px;
-        font-size: 14px;
-    }
-
-    .van-transfer-wrapper {
-        gap: 16px;
-    }
-
-    /* Dalawang card per row */
-    .van-transfer-card {
-        width: calc(50% - 8px);
-        min-width: 240px;
-    }
-
-    .transfer-thumbnails img {
-        width: 100%;
-        height: 180px;
-    }
-
-    .van-transfer-title {
-        width: 100%;
-        font-size: 14px;
-    }
-
-    .van-transfer-card-content {
-        margin: 12px;
-        width: calc(100% - 24px);
-    }
-
-    .price {
-        font-size: 16px;
-    }
-}
-
-
-/* ===================== SMALL MOBILE (480px) ===================== */
-
-@media screen and (max-width: 480px) {
-    #travel {
-        height: 320px;
-    }
-
-    .travel-image-wrapper img {
-        height: 320px;
-    }
-
-    .travel-content {
-        width: 95%;
-    }
-
-    .travel-content h2 {
-        font-size: 1.3rem;
-    }
-
-    .travel-content p {
-        font-size: 0.9rem;
-        margin-bottom: 20px;
-    }
-
-    .travel-info a {
-        padding: 12px 24px;
-        font-size: 13px;
-    }
-
-    /* Isang card per row */
-    .van-transfer-card {
-        width: 100%;
-        min-width: unset;
-    }
-
-    .transfer-thumbnails img {
-        width: 100%;
-        height: 200px;
-    }
-
-    .van-transfer-title {
-        font-size: 15px;
-    }
-
-    .price {
-        font-size: 17px;
-    }
-
-    .van-transfer-btn a {
-        font-size: 0.85rem;
-        padding: 10px;
-    }
-}
-
-
-/* ===================== EXTRA SMALL (360px) ===================== */
-
-@media screen and (max-width: 360px) {
-    #travel {
-        height: 280px;
-    }
-
-    .travel-image-wrapper img {
-        height: 280px;
-    }
-
-    .travel-content h2 {
-        font-size: 1.1rem;
-    }
-
-    .travel-content p {
-        font-size: 0.85rem;
-        margin-bottom: 16px;
-    }
-
-    .transfer-thumbnails img {
-        height: 170px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ============================================
+   FOOTER (same as existing pages)
+   ============================================ */
 #footer {
     width: 100%;
     padding: 80px 0 0 0;
     background-color: #4B5B30;
     font-family: 'Open Sans', sans-serif;
     overflow: hidden;
+    margin-top: 60px;
 }
 
 .footer-container {
@@ -866,6 +924,7 @@ header {
     align-items: flex-start;
     text-align: left;
     flex: 1;
+    min-width: 0;
 }
 
 .logo {
@@ -883,7 +942,6 @@ header {
 }
 
 .logo h2 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
     font-weight: 200;
     color: #ffffff;
@@ -921,10 +979,10 @@ header {
     flex-direction: column;
     align-items: flex-start;
     flex: 1;
+    min-width: 0;
 }
 
 .quick-links h3 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
     text-transform: uppercase;
     color: #ffffff;
@@ -960,10 +1018,10 @@ header {
     flex-direction: column;
     align-items: flex-start;
     flex: 1;
+    min-width: 0;
 }
 
 .news-letter h3 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
     text-transform: uppercase;
     color: #ffffff;
@@ -1013,7 +1071,6 @@ header {
     background-color: #ff5a5f;
     color: #ffffff;
     border: none;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
@@ -1069,38 +1126,118 @@ header {
     transform: translateY(-2px);
 }
 
-/* ===================== MEDIA QUERIES PARA SA FOOTER LANG===================== */
 
+/* ============================================
+   RESPONSIVE — BOOKING SECTION
+   ============================================ */
 
-@media screen and (max-width: 1024px) {
-    .footer-container {
-        flex-wrap: wrap;
-        gap: 40px;
+/* Tablet */
+@media screen and (max-width: 991px) {
+    .transfer-hero-wrapper {
+        height: 280px;
     }
 
-    .footer-column1,
-    .footer-column2,
-    .footer-column3 {
-        flex: 1 1 calc(50% - 20px);
+    .transfer-hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .booking-layout {
+        gap: 25px;
+    }
+
+    .booking-form-col {
+        width: 340px;
     }
 }
 
+/* Mobile */
 @media screen and (max-width: 768px) {
+    .transfer-hero-wrapper {
+        height: 240px;
+    }
+
+    .transfer-hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .transfer-hero-content p {
+        font-size: 0.95rem;
+    }
+
+    .booking-layout {
+        flex-direction: column;
+    }
+
+    .booking-form-col {
+        width: 100%;
+        position: static;
+    }
+
+    .route-details-grid {
+        flex-direction: column;
+    }
+
+    .inclusions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    #footer {
+        padding: 40px 0 0 0;
+    }
+
     .footer-container {
         flex-direction: column;
-        gap: 40px;
+        padding: 0 20px;
+        gap: 30px;
     }
 
     .footer-column1,
     .footer-column2,
     .footer-column3 {
-        flex: none;
         width: 100%;
+    }
+
+    .footer-column1 p {
+        max-width: 100%;
+    }
+
+    .news-letterForm {
+        max-width: 100%;
     }
 
     .footer-bottom-container {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
         text-align: center;
+        padding: 0 20px;
+    }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 480px) {
+    .transfer-hero-wrapper {
+        height: 200px;
+    }
+
+    .transfer-hero-content h1 {
+        font-size: 1.3rem;
+    }
+
+    .transfer-hero-content p {
+        font-size: 0.85rem;
+    }
+
+    #booking-section {
+        padding: 0 12px;
+        margin: 24px auto;
+    }
+
+    .booking-price-header .price-amount {
+        font-size: 1.5rem;
+    }
+
+    .footer-bottom-container p {
+        font-size: 0.8rem;
     }
 }
